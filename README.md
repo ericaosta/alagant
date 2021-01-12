@@ -14,10 +14,10 @@
 ## CPS
 
 
-### Oracle Federal Finances (>=3)
+### Oracle Federal Finances
 
 
-### Cloud Migration/Transformation (>=2)
+### Cloud Migration/Transformation
 
 
-### FedRAMP (>=2)
+### FedRAMP

@@ -5,22 +5,6 @@ date: "12/30/2020"
 output: html_document
 ---
 
-```{r duns}
-
-col <- as.character(1:142)
-
-temp <- tempfile()
-download.file("https://www.sam.gov/SAM/extractfiledownload?role=WW&version=SAMV2&filename=SAM_PUBLIC_MONTHLY_V2_20201206.ZIP",temp)
-data <- read.delim(unz(temp, "SAM_PUBLIC_MONTHLY_V2_20201206.dat"), quote="")
-unlink(temp)
-
-row1 <- data[1,]
-
-# metadata https://www.sam.gov/SAM/transcript/PUBLIC_V2_EXTRACT_REFERENCES.ZIP
- metadata <- SAM_Master_Extract_Mapping_v5_8_Public_File_V2_Layout
- colnames(metadata) <- c("col_name","col_num")
-
-```
 
 ```{r cmmi}
 library(rvest)
@@ -147,7 +131,5 @@ library(writexl)
 write_xlsx(cmmi_final, "cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
 ```
 
-```{r}
 
-```
 

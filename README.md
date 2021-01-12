@@ -17,8 +17,8 @@ CMMI Level 3 for Development and Services provides a critical foundation of indu
 
 
 * [CMMI Markdown](https://github.com/ericaosta/alagant/blob/main/CMMI.md)
-* [CMMI Code](https://github.com/ericaosta/alagant/blob/main/CMMI.Rmd)
-* [CMMI Output](https://github.com/ericaosta/alagant/blob/main/cmmi_2021_sam_ML3_ML4_ML5_world.xlsx)
+* [CMMI Code (in R)](https://github.com/ericaosta/alagant/blob/main/CMMI.Rmd)
+* [CMMI Output (.xlsx)](https://github.com/ericaosta/alagant/blob/main/cmmi_2021_sam_ML3_ML4_ML5_world.xlsx)
 
 
 ## ISO 9001:2015

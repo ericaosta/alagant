@@ -1,6 +1,6 @@
 # CMMI
 
-How to scrap data from [CMMI Institute](https://cmmiinstitute.com) and clean to select only >= ML3 with SAM.
+How to scrap data from [CMMI Institute](https://cmmiinstitute.com) and clean to select only >= ML3 with SAM
 
 ### Load packages
 ```r
@@ -14,7 +14,7 @@ library(tidyverse)
 ```
 
 
-### Scrap whole item-card data from all pages; separate into 500 pages at the time.
+### Scrap whole item-card data from all pages; separate into 500 pages at the time
 
 ```
 itemcard_1_500 <- lapply(paste0('https://cmmiinstitute.com/pars/?StateId=33296d0d-c5c5-4d47-b36b-c692d73a5ab7&PageNumber=', 1:500),

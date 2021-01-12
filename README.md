@@ -28,7 +28,7 @@ Requiring companies be certified in the ISO 9001 standard will ensure a level of
 
 _Coming soon_
 
-## CPS
+## CSP
 ### CSP and Key Technology Partnerships
 
 Require vendor partnerships with Oracle and the top CSPs: AWS (Advanced or Premier), Microsoft Azure (Silver or Gold Competency) and Oracle Cloud Services (Gold Competency). Having this level of reach back is critical for transformation efforts.

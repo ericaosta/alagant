@@ -1,6 +1,13 @@
 # NIH NDMS Modernization Proposal Project
 
 NBS needs a quoter (Prime) with a strong track record of success delivering digital transformation and cloud solutions across hybrid and multi-cloud environments. Offerors (Prime) must have all of the following mandatory qualification criteria:
+* [Capability Maturity Model Integration (CMMI) Level 3](https://github.com/ericaosta/alagant#capability-maturity-model-integration-cmmi-level-3)
+* [International Organization for Standardization (ISO) 9001:2015](https://github.com/ericaosta/alagant#iso-90012015)
+* [CSP and Key Technology Partnerships](https://github.com/ericaosta/alagant#csp-and-key-technology-partnerships)
+* [Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials](https://github.com/ericaosta/alagant#oracle-federal-finances)
+* [Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation](https://github.com/ericaosta/alagant#cloud-migrationtransformation)
+* [Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise](https://github.com/ericaosta/alagant#fedramp)
+
 
 ## CMMI 
 ### Capability Maturity Model Integration (CMMI) Level 3

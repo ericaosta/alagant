@@ -26,32 +26,32 @@ CMMI Level 3 for Development and Services provides a critical foundation of indu
 
 Requiring companies be certified in the ISO 9001 standard will ensure a level of maturity as an organization and standards the Quoter must consistently apply in order to remain certified.
 
-Coming soon
+_Coming soon_
 
 ## CPS
 ### CSP and Key Technology Partnerships
 
 Require vendor partnerships with Oracle and the top CSPs: AWS (Advanced or Premier), Microsoft Azure (Silver or Gold Competency) and Oracle Cloud Services (Gold Competency). Having this level of reach back is critical for transformation efforts.
 
-Coming soon
+_Coming soon_
 
 ## Oracle Federal Finances
 ### Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials
 
 Having familiarity and domain expertise with Oracle Federal Financials can be good predictor of future success with NBS as the backbone of the system is Oracle Federal Financials.
 
-Coming soon
+_Coming soon_
 
 ## Cloud Migration/Transformation
 ### Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation
 
 Having familiarity experience successfully supporting a cloud migration in a similar environment to NBS can be a good predictor of future success.
 
-Coming soon
+_Coming soon_
 
 ## FedRAMP
 ### Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise
 
 Quoter must have experience managing applications similar in size and scope of NBS in a FISMA High or Moderate Cloud data centers.
 
-Coming soon
+_Coming soon_

@@ -103,7 +103,7 @@ df2 <- df1 %>% separate(
 
 df2$null <- NULL
 
-# add CMMI-SVC or -DEV; may not be needed
+# add CMMI-SVC AND/OR -DEV; NEED TO ADJUST CODE TO INCUDE AN OPTION WITH BOTH -SVC PLUS -DEV
 df2$cmmi_type <- ifelse(grepl("CMMI-SVC",df2$id_level),'CMMI-SVC',
                          ifelse(grepl("CMMI-DEV", df2$id_level), 'CMMI-DEV', 'something_else'))
 

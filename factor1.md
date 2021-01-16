@@ -528,7 +528,7 @@ colnames(countries_select) <- c("country", "Name", "y", "sam_status", "level_sta
 
 
 
-## 1.3 Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
+### 1.3 Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
 ```{r}
 
 # Inner join companies from CMMI list ('cmmi') and DUNS list FY21 ('). Each row represents a unique DUNS. It seems like one company can have multiple DUNS. 
@@ -544,7 +544,7 @@ unique(cmmi_duns_usa$Name)
 
 
 
-## 1.4 Join CMMI data to awards data by DUNS
+### 1.4 Join CMMI data to awards data by DUNS
 ```{r}
 
 # Award in USA for companies with cmmi and select only relevant columns, such as award_description, recipient_duns, naics_code, naics_description

@@ -90,7 +90,7 @@ df1 <- df %>% separate(
 ```
 
 
-### 1.2 Assign SAM status, CMMI level, and other data cleaning. 
+### 1.2 Assign SAM status, CMMI level, and other data cleaning
 Search for "with SAM" or "without SAM" from each company entry and create a new column that designates the "SAM status" of the company. Repeat for ML2-5 to designate "CMMI level".
 
 ```{r}
@@ -151,18 +151,102 @@ write_xlsx(cmmi_final, "cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
 
 ## 2. International Organization for Standardization (ISO) 9001:2015
 
+I have yet to find a reliable database for companies with ISO certification status. Hoshang has yet to deliver. For now, companies that meet criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us are more likely to be ISO 9001 certified. 
 
 ## 3. CSP and Key Technology Partnerships
 
+I will contact AWS, Oracle, Azure. For now, criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us leads for companies that meet this criterium. 
 
 ## 4. Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials
+
+### Clean awards data
+Reduce dimentionality of awards data ("awards_fy21") from >200 columns to name of company, DUNS, award description, NAICS, CAGE, and country of company. Depending on the objectively, other columns will be selected accordingly. 
+
+```{r}
+# Original file has >200 columns. Select 'recipient_name', 'award description', 'recipient_duns', 'naics_code', 'naics_description', 'cage_code', 'recipient_parent_name', 'recipient_parent_duns', 'recipient_country_name' columns to simplify straightforward analysis
+awards_fy21_select <- awards_fy21  %>%
+   dplyr::select(recipient_name, award_description, recipient_duns, naics_code, naics_description, cage_code, recipient_parent_name, recipient_parent_duns, recipient_country_name)
+```
+
+### Create a list of DUNS per company 
+A list of company names with their corresponding DUNS will be used to join other large sets of data by their company name/DUNS. For instance, the list of CMMI-filtered companies will be joined to with the DUNS list to then further join it to other information (e.g., NAICS, award description, etc.) by their common DUNS/company names. To see an example, please go to [Integration of Multiple Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#b-integration-of-multiple-criteria)
+```{r}
+# Remove duplicate DUNS so there is only one duns per company. In the future, will repeat for fy20-18, merge dataframes by rows, remove duplicates again; assumes duns per company stay the same over time
+duns_fy21 <- awards_fy21_select[!duplicated(awards_fy21_select$recipient_duns),] %>%
+  select(recipient_duns, naics_code, recipient_name, cage_code, recipient_country_name)
+
+# Select only companies in USA
+duns_fy21_usa <- duns_fy21 %>%
+  dplyr::filter(recipient_country_name == "UNITED STATES")
+
+# Save xlsx file with list of companies and corresponding DUNS and other ID info for FY2021
+write_xlsx(duns_fy21_usa, "duns_FY21_USA.xlsx")
+
+# Determine regular expressions ("regex") to "standarize" a pattern between company names. It is important to standarize company names because some website that we will scrap may have company names but not DUNS. Therefore, we can use this tool to analyze government data (e.g., sam.gov, usaspending.gov with other sites, such as cmmiinstitute.com, where we can find companies and their CMMI Level status)
+
+to_remove <- c("\\LLC$",
+               "\\, LLC$", 
+               "\\. Inc.$\\", 
+               "\\. Inc.$", 
+               "\\ INC$", 
+               "\\Inc$", 
+               "\\Co.$", 
+               "\\INC.$", 
+               "\\, INC$",
+               "\\, INC.$",
+               "\\, Inc$",
+               "\\, Inc.$",
+               "\\L.L.C.$", 
+               "\\, L.L.C.$",
+               "\\Corp.$", 
+               "\\Ltd.$",
+               "\\LLC.$",
+               "\\L.LC.$",
+               "\\, L.LC$",
+               "\\L.C.$",
+               "\\Llc$",
+               "\\PLLC$",
+               "\\inc$",
+               "\\, Ltd.$",
+               "\\.$",
+               "\\,$",
+               "\\, Llc$",
+               "\\, PLLC$",
+               "\\#1$",
+               "\\Co$",
+               "\\Corp$",
+               "\\Corporation$",
+               "\\CORPORATION$",
+               "\\Incorporated$",
+               "\\LLP$",
+               "\\CORP.$",
+               "\\, L L C$",
+               "\\CORP$",
+               "\\, inc$",
+               "\\LLLP$",
+               "\\(INC)$",
+               "\\, L.L.L.P$",
+               "\\ LP$",
+               "\\ PC$",
+               " P.C$",
+               "\\LTD$",
+               "\\, LTD$"
+               )
+
+# Standarize company names by removing regex. Note post second-to-last Co. or Corp. will missout companies with names that have Cor|Corp in main name (e.g., TraCorp)
+duns_fy21_usa$x <- gsub(paste(to_remove,collapse="|"),"",duns_fy21_usa$recipient_name) # removes regex
+duns_fy21_usa$x <- gsub("TECHNOLOGY|TECHNOLOGIES","TECH",as.character(duns_fy21_usa$x)) # converts "technology'ies' to "tech"
+duns_fy21_usa$x <- gsub("COMPANIES|COMPANY","CO",as.character(duns_fy21_usa$x)) # converts "company'ies' to "co"
+duns_fy21_usa$y <- gsub(paste(to_remove,collapse="|"),"",duns_fy21_usa$x) # to remove second-to-last terms, such as "Co" before "Inc" in "Co, Inc" and all iterations thereof. 
+```
+
 
 
 ## 5. Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation
 
 ## 6. Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise
 
-# B. Integration of Individual Criteria
+# B. Integration of Multiple Criteria
 
 # C. Analysis
 

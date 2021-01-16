@@ -159,6 +159,12 @@ I will contact AWS, Oracle, Azure. For now, criteria [#4](https://github.com/eri
 Reduce dimentionality of awards data ("awards_fy21") from >200 columns to name of company, DUNS, award description, NAICS, CAGE, and country of company. Depending on the objectively, other columns will be selected accordingly. 
 
 ```{r}
+# Read csv file with awards data from FY21; plan to directly unzip and load from url in the future. 
+url_awards_fy21 <- "https://files.usaspending.gov/generated_downloads/PrimeAwardSummariesAndSubawards_2021-01-14_H05M14S15472571.zip"
+download.file(url_awards_fy21, "awards_fy21.zip")
+unzip("awards_fy21.zip")
+awards_fy21 <- read_csv("Contracts_PrimeAwardSummaries_2021-01-14_H05M14S17_1.csv")
+
 # Original file has >200 columns. Select 'recipient_name', 'award description', 'recipient_duns', 'naics_code', 'naics_description', 'cage_code', 'recipient_parent_name', 'recipient_parent_duns', 'recipient_country_name' columns to simplify straightforward analysis
 awards_fy21_select <- awards_fy21  %>%
    dplyr::select(recipient_name, award_description, recipient_duns, naics_code, naics_description, cage_code, recipient_parent_name, recipient_parent_duns, recipient_country_name)
@@ -333,12 +339,106 @@ BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC | 169939688 | 3 | 541512 | COMPUTE
 > [BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC](https://cognosante.com/our-company/certifications-contract-vehicles/) is CMMI-SVC ML3 and ISO 9001:2015 certified. Therefore, the best approach is to start with the most stringent criteria first. The likelihood of meeting more basic criteria (e.g., CMMI Level 3 and up, ISO 9001:2015) increases when more stringent criteria (cloud migration/transformation, etc.) are met.  
 
 ## 6. Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise
+Text
 
 # B. Integration of Multiple Criteria
 
-## Clean CMMI data 
+## 1. Match CMMI data to award data
+
+### 1.1 Prepare environment
+```{r }
+# Read xlsl file with cmmi data
+cmmi <- read_excel("cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
+
+# country names for companies from CMMI list; had to be manually collected as a proof-of-concept for future analyses
+country <- list(
+  "AASKI Technologies (A Mag Aerospace Company)" = "USA", 
+  "Adams Communication & Engineering Technology, Inc."= "USA",
+  "Aselsan MGEO(Aselsan MGEO)" = "Turkey",
+  "Avante Codeworx Private Limited" = "India",
+  "Axle Informatics, LLC" = "USA",
+  "BAE Systems Electronic Systems" = "USA, UK, Canada, Israel",
+  "Boeing India Private Limited (English)" = "India",
+  "Centauri" = "USA",
+  "Changeis, Inc." = "USA",
+  "China Eastern Airlines Corporation Limited" = "China",
+  "China Post Information Technology" = "China",
+  "Client Network Services India Pvt Ltd" = "USA, India",
+  "Cole Engineering Services, Inc." = "USA",
+  "CompQsoft, Inc." = "USA",
+  "Concentrix Services Pvt. Ltd." = "USA, India",
+  "Dovel Technologies, LLC" = "USA",
+  "Dynamik Technologies Sdn Bhd" = "Brunei",
+  "Earth Resources Technology, Inc. (ERT)" = "USA",
+  "ECS Federal, LLC" = "USA",
+  "Efftronics Systems Private Limited" = "India",
+  "ESEN SYSTEMS INTEGRATION" = "Turkey",
+  "Evergrande life insurance Co., Ltd." = "China",
+  "Evolver Inc." = "USA",
+  "Guangdong Oriental Thought Co., Ltd." = "China",
+  "Highlight Technologies, LLC." = "USA",
+  "Holostik India Limited" = "India",
+  "Housing & Development Board (HDB)" = "Singapure",
+  "IEM" = "USA",
+  "IERUS Technologies, Inc." = "USA",
+  "Indra Sistemas S.A." = "USA, Spain, others", 
+  "Industrias Lior S.A. de C.V." = "Mexico",
+  "Info Gain Consulting LLC" = "USA", 
+  "Inserso Corporation" = "USA",
+  "Integra Micro Software Services Private Limited" = "India, USA, Singapore",
+  "Invictus International Consulting" = "USA",
+  "Ison Technologies Private Limited" = "India",
+  "JYG Innovations, LLC." = "USA", 
+  "KPMG Advisory Services Private Limited" = "India",
+  "Leonardo DRS" = "USA",
+  "Mercer Engineering Research Center (MERC)" = "USA",
+  "Metis Technology Solutions, Inc." = "USA",
+  "MicroGenesis Techsoft Pvt Ltd" = "India",
+  "Next Tier Concepts, Inc." = "USA",
+  "Nextchip Co.,Ltd." = "Korea",
+  "Primestone S.A.S.(Primestone S.A.S.)" = "USA",
+  "Pumex Computing, LLC." = "USA",
+  "QA InfoTech Software Services Private Limited" = "India, USA, Canada",
+  "Quality Innovation, Inc." = "USA",
+  "RiVi Consulting Group LLC" = "USA, India",
+  "Ryan Consulting Group" = "USA",
+  "Samin TekMindz India Private Limited" = "India",
+  "Sansec Technology Co., Ltd." = "China",
+  "SEV1Tech LLC" = "USA",
+  "SICPA S.A." = "Switzerland",
+  "Southwest Research Institute" = "USA",
+  "SVAM International Incorporated" = "USA, Mexico, India",
+  "Swain Techs" = "USA",
+  "Technica Corporation" = "USA",
+  "Teradyne" = "USA",
+  "Trigent Solutions Inc." = "USA",
+  "UNISYS, S. L. U." = "USA, Spain",
+  "VariQ Corporation" = "USA",
+  "Vectrus Mission Solutions Corporation" = "USA",
+  "Aderas, Inc." = "USA",
+  "Alion Science and Technology Corporation" = "USA",
+  "Unisoc (Shanghai) Technologies Co., Ltd" = "China",
+  "Beijing Join-Cheer Government Software Co., Ltd." = "China",
+  "Beijing Join-Cheer Software Co., LTD." = "China",
+  "Beijing Sifang Automation Co., Ltd." = "China",
+  "Beijing Sifang Engineering Co., Ltd." = "China",
+  "China Telecom System Integration Co., Ltd" = "China",
+  "General Atomics Aeronautical Systems Inc." = "USA",
+  "Hanwha Systems" = "Korea",
+  "Hewlett Packard Enterprise Co., Ltd." = "China, others",
+  "MAXIMUS Federal Services" = "USA",
+  "National Government Services, Inc." = "USA",
+  "Riptide Software Inc." = "USA",
+  "SoftManagement S.A." = "Colombia",
+  "Tata Consultancy Services Limited" = "India",
+  "Wipro Limited" = "India",
+  "Yash Technologies Pvt. Ltd." = "USA")
+
+```
+
+### 1.2 Clean CMMI company names with regular expressions
 ```{r}
-# Regular expression to standardize company names from CMMI website; just a few more additions to "to_remove" as above.
+# Regular expression to standardize company names from CMMI website; just a few more additions to "to_remove" as in A 4.4
 to_remove_cmmi <- c("\\LLC$",
                "\\, LLC$", 
                "\\. Inc.$\\", 
@@ -402,7 +502,6 @@ to_remove_cmmi <- c("\\LLC$",
                )
 
 # Standarize company names; use touper() to convert character strings to uppercase
-
 cmmi$x <- gsub(paste(to_remove_cmmi,collapse="|"),"",as.character(cmmi$org))
 cmmi$x <- toupper(gsub("Technologies|Technology","Tech",as.character(cmmi$x)))
 cmmi$x <- toupper(gsub("Companies|Company","Co",as.character(cmmi$x)))
@@ -425,12 +524,11 @@ countries_select <- countries_cmmi %>%
   filter(`unlist(country)` == "USA") %>%
   select(`unlist(country)`, Names, y, sam_status, level_status)
 colnames(countries_select) <- c("country", "Name", "y", "sam_status", "level_status")
-
 ```
 
 
 
-## Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
+## 1.3 Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
 ```{r}
 
 # Inner join companies from CMMI list ('cmmi') and DUNS list FY21 ('). Each row represents a unique DUNS. It seems like one company can have multiple DUNS. 
@@ -446,7 +544,7 @@ unique(cmmi_duns_usa$Name)
 
 
 
-## Join CMMI data to awards data by DUNS
+## 1.4 Join CMMI data to awards data by DUNS
 ```{r}
 
 # Award in USA for companies with cmmi and select only relevant columns, such as award_description, recipient_duns, naics_code, naics_description
@@ -458,6 +556,13 @@ cmmi_duns_award_select <- dplyr::select(cmmi_duns_award, y, award_description, r
 colnames(cmmi_duns_award_select) = c("company_name","award_description","recipient_duns","naics_code", "naics_description", "sam_status", "cmmi_level", "cage_code")
 
 ```
+
+
+# C. Analysis
+- Relationships between CMMI and ISO
+- Subsetting migrat:transfor in cloud (~ cloud and migrat|transfo) vs. cloud|migrat|transfo; assess sensitivity vs. specificity
+- Trends in NAICS after CMMI filtering
+
 
 
 
@@ -491,11 +596,3 @@ htmlwidgets::saveWidget(l, "awards.html")
 # Optional
 naics_groups <- cmmi_duns_award_select %>%
   dplyr::group_by(naics_description)
-
-```
-
-# C. Analysis
-- Relationships between CMMI and ISO
-- Subsetting migrat:transfor in cloud (~ cloud and migrat|transfo) vs. cloud|migrat|transfo; assess sensitivity vs. specificity
-- Trends in NAICS after CMMI filtering
-

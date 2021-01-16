@@ -263,6 +263,14 @@ award_ufms_usa_3 <- award_ufms_usa_3[!duplicated(award_ufms_usa_3$recipient_duns
 # Export data to Excel
 write_xlsx(award_ufms_usa_3, "award_ufms_usa_3.xlsx")
 ```
+### Output:
+For more details, please see "award_ufms_usa_3.xlsx"
+
+Company | DUNS | Awards | NAICS code | NAICS description | Award description
+--------|------|------------------|------------|-------------------|------------------
+CGI FEDERAL INC. | 145969783 | 10 | 541519 | OTHER COMPUTER RELATED SERVICES | BOP UFMS WAVE V - PHASE 2 MIGRATION
+INTEGRATED MEDICAL SOLUTIONS, INC | 841580934 | 6 | 621399 | OFFICES OF ALL OTHER MISCELLANEOUS HEALTH PRACTITIONERS | COMPREHENSIVE MEDICAL SERVICES FOR FCI AND UFMS INMATES
+
 > [CGI FEDERAL INC.](https://www.cgi.com/us/en-us/federal/about-cgi-federal) is CMMI-SVC ML3 and ISO 9001:2015 certified. Therefore, the best approach is to start with the most stringent criteria first. The likelihood of meeting more basic criteria (e.g., CMMI Level 3 and up, ISO 9001:2015) increases when more stringent criteria (UFMS, Oracle Financials, etc.) are met. 
 
 

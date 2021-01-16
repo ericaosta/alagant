@@ -336,6 +336,166 @@ BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC | 169939688 | 3 | 541512 | COMPUTE
 
 # B. Integration of Multiple Criteria
 
-# C. Analysis
+## Clean CMMI data 
+```{r}
+# Regular expression to standardize company names from CMMI website; just a few more additions to "to_remove" as above.
+to_remove_cmmi <- c("\\LLC$",
+               "\\, LLC$", 
+               "\\. Inc.$\\", 
+               "\\. Inc.$", 
+               "\\ INC$", 
+               "\\Inc$", 
+               "\\Co.$", 
+               "\\INC.$", 
+               "\\, INC$",
+               "\\, INC.$",
+               "\\, Inc$",
+               "\\, Inc.$",
+               "\\L.L.C.$", 
+               "\\, L.L.C.$",
+               "\\Corp.$", 
+               "\\Ltd.$",
+               "\\LLC.$",
+               "\\L.LC.$",
+               "\\, L.LC$",
+               "\\L.C.$",
+               "\\Llc$",
+               "\\PLLC$",
+               "\\inc$",
+               "\\, Ltd.$",
+               "\\.$",
+               "\\,$",
+               "\\, Llc$",
+               "\\, PLLC$",
+               "\\#1$",
+               "\\Co$",
+               "\\Corp$",
+               "\\Corporation$",
+               "\\CORPORATION$",
+               "\\Incorporated$",
+               "\\LLP$",
+               "\\CORP.$",
+               "\\, L L C$",
+               "\\CORP$",
+               "\\, inc$",
+               "\\LLLP$",
+               "\\(INC)$",
+               "\\, L.L.L.P$",
+               "\\ LP$",
+               "\\ PC$",
+               " P.C$",
+               "\\LTD$",
+               "\\, LTD$",
+               "\\s*\\([^\\)]+\\)",
+               "\\Pvt Ltd",
+               "\\Pvt.",
+               "Private Limited",
+               "S.A.$",
+               "S.A. de C.V",
+               "S. A",
+               "Pvt.$",
+               "S.A.S",
+               "\\, LTD",
+               "\\, Ltd",
+               "\\Limited$",
+               ",.*"
+               )
 
+# Standarize company names; use touper() to convert character strings to uppercase
+
+cmmi$x <- gsub(paste(to_remove_cmmi,collapse="|"),"",as.character(cmmi$org))
+cmmi$x <- toupper(gsub("Technologies|Technology","Tech",as.character(cmmi$x)))
+cmmi$x <- toupper(gsub("Companies|Company","Co",as.character(cmmi$x)))
+cmmi$x <- toupper(gsub("BAE SYSTEMS ELECTRONIC SYSTEMS","BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION ",as.character(cmmi$x))) # a specific modification to a company name
+cmmi$y <- toupper(gsub(paste(to_remove_cmmi,collapse="|"),"",as.character(cmmi$x)))
+
+# Select USA-only companies from CMMI list. The 'country' list manually generated after the list of 82-row table of CMMI Level >=3 and SAM+ companies was generated. Next time, I can specific USA-only companies on the CMMI website prior to scraping. 
+countries <- as.data.frame(unlist(country)) 
+countries$Names <- rownames(countries)
+countries$x <- gsub(paste(to_remove_cmmi,collapse="|"),"",as.character(countries$Name))
+countries$x <- toupper(gsub("Technologies|Technology","Tech",as.character(countries$x)))
+countries$x <- toupper(gsub("Companies|Company","Co",as.character(countries$x)))
+countries$x <- toupper(gsub("BAE SYSTEMS ELECTRONIC SYSTEMS","BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION ",as.character(countries$x)))
+countries$y <- toupper(gsub(paste(to_remove_cmmi,collapse="|"),"",as.character(countries$x)))
+
+# Inner join
+countries_cmmi <- inner_join(countries, cmmi, by="y", suffix=c("_countries","_cmmi"))
+countries_cmmi_anti <- anti_join(countries, cmmi, by="y", suffix=c("_countries","_cmmi"))
+countries_select <- countries_cmmi %>%
+  filter(`unlist(country)` == "USA") %>%
+  select(`unlist(country)`, Names, y, sam_status, level_status)
+colnames(countries_select) <- c("country", "Name", "y", "sam_status", "level_status")
+
+```
+
+
+
+## Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
+```{r}
+
+# Inner join companies from CMMI list ('cmmi') and DUNS list FY21 ('). Each row represents a unique DUNS. It seems like one company can have multiple DUNS. 
+
+# cmmi ML3 >=3 and SAM in USA
+cmmi_duns_usa <- inner_join(countries_select, duns_fy21_usa, by="y", suffix=c("_cmmi","_duns")) # matched
+anti_cmmi_duns_usa <- anti_join(countries_select, duns_fy21_usa, by="y", suffix=c("_cmmi","_duns")) # unmatched
+
+# There are a total of 27 unique companies from CMMI matched to their DUNS. Success rate of approach = 27/41 = 66% (out of total unique companies from 'countries_select'). Improving the regex and adding DUNS from previous fiscal years could increase the success rate of matching DUNS from usaspending.gov to data from scraped websites such as cmmiinstitute.com
+unique(cmmi_duns_usa$Name)
+
+```
+
+
+
+## Join CMMI data to awards data by DUNS
+```{r}
+
+# Award in USA for companies with cmmi and select only relevant columns, such as award_description, recipient_duns, naics_code, naics_description
+cmmi_duns_award <- inner_join(cmmi_duns_usa, awards_fy21_select, by="recipient_duns", suffix = c("_cmmi","_award"))
+cmmi_duns_award_select <- dplyr::select(cmmi_duns_award, y, award_description, recipient_duns, naics_code_cmmi, naics_description, sam_status, level_status, cage_code_cmmi)
+
+# consider filtering instead of 5182|518210
+
+colnames(cmmi_duns_award_select) = c("company_name","award_description","recipient_duns","naics_code", "naics_description", "sam_status", "cmmi_level", "cage_code")
+
+```
+
+
+
+## Visualize awards data (optional)
+```{r}
+library(ggplot2)
+library(plotly)
+
+cmmi_duns_award_select$naics_code <- as.character(cmmi_duns_award_select$naics_code)
+
+p <- ggplot(cmmi_duns_award_select, aes(y = naics_code, x = company_name, colour = company_name, group=naics_code)) +
+  geom_count(alpha=1) +
+  labs(title = "Filtered Companies and NAICS Codes",
+       x = "Company Names",
+       y = "NAICS Code",
+       size = ""
+       )
+
+l <- ggplotly(p)
+
+htmlwidgets::saveWidget(l, "awards.html")
+
+# Note: Could try to determine weighted impact of  companies vs. naics code per award prevalence to determine top hits as in fgsea()
+
+```
+
+
+## Trends in award descriptions based on NAICS (Optional)
+```{r}
+
+# Optional
+naics_groups <- cmmi_duns_award_select %>%
+  dplyr::group_by(naics_description)
+
+```
+
+# C. Analysis
+- Relationships between CMMI and ISO
+- Subsetting migrat:transfor in cloud (~ cloud and migrat|transfo) vs. cloud|migrat|transfo; assess sensitivity vs. specificity
+- Trends in NAICS after CMMI filtering
 

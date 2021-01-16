@@ -182,7 +182,7 @@ duns_fy21_usa <- duns_fy21 %>%
 # Save xlsx file with list of companies and corresponding DUNS and other ID info for FY2021
 write_xlsx(duns_fy21_usa, "duns_FY21_USA.xlsx")
 ```
-### 4.3 Clean company names
+### 4.3 Clean company names with regular expressions
 Regular expressions ("regex") can "standarize" a pattern between company names. It is important to standarize company names because some website that we will scrap may have company names but not DUNS. Therefore, we can use this tool to analyze government data (e.g., sam.gov, usaspending.gov with other sites, such as cmmiinstitute.com, where we can find companies and their CMMI Level status). 
 
 ```{r}
@@ -243,7 +243,7 @@ duns_fy21_usa$x <- gsub("COMPANIES|COMPANY","CO",as.character(duns_fy21_usa$x)) 
 duns_fy21_usa$y <- gsub(paste(to_remove,collapse="|"),"",duns_fy21_usa$x) # to remove second-to-last terms, such as "Co" before "Inc" in "Co, Inc" and all iterations thereof. 
 ```
 
-### 4.4 Search for patterns in award descriptions
+### 4.4 Search for "UFMS" and "ORACLE FINANCIAL" patterns in award descriptions
 Text
 
 ```{r}
@@ -272,7 +272,7 @@ write_xlsx(award_ufms_usa_3, "award_ufms_usa_3.xlsx")
 
 ## 5. Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation
 
-### 5.1 Search for patterns in award descriptions
+### 5.1 Search for "CLOUD" patterns in award descriptions
 Text
 ```{r}
 award_terms <- awards_fy21_select
@@ -287,7 +287,7 @@ award_cloud_usa <- award_terms %>%
 > Note: Awards containing the word "cloud" are more likely to have NAICS related to "OTHER COMPUTER RELATED SERVICES" and code 541519. 
 
 
-###  Search for patterns in award descriptions within "CLOUD"
+###  Search for "MIGRAT" and "TRANSFO" patterns in award descriptions within "CLOUD"
 Search for words containing "migrat" and "transfo" within the "cloud"-containing awards and create a new column that designates the "migration" or "transformation" status of the award description. 
 
 ```{r}

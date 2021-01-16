@@ -1,19 +1,15 @@
 # A. Criteria
 
-## 1. Capability Maturity Model Integration (CMMI) Level 3
-### Goals
-- Scrape CMMI Institute for appraisals
-- Clean to select only companies with SAM and CMMI ML3, ML4, and ML5
-> Data can be found on [CMMI Institute, Published Appraisal Results](https://cmmiinstitute.com/pars/?StateId=c2c50afd-1884-4a85-9665-57d0a50a0e1c&PageNumber=1&Handler=ApplyFilters)
-
-
 ### Load packages
-```{r cmmi}
+```{r }
 library(rvest)
 library(pander)
 library(xml2)
 library(tidyverse)
+library(dplyr)
 ```
+
+## 1. Capability Maturity Model Integration (CMMI) Level 3
 
 ### 1.1 Web scraping and data cleaning
 

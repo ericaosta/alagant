@@ -16,6 +16,9 @@ library(tidyverse)
 ```
 
 ### 1.1 Web scraping and data cleaning
+
+Access  [CMMI Institute, Published Appraisal Results](https://cmmiinstitute.com/pars/?StateId=c2c50afd-1884-4a85-9665-57d0a50a0e1c&PageNumber=1&Handler=ApplyFilters) and scrape pages 1 through 1913 that correspond to all appraisals published to-date. 
+
 ```{r }
 # Scrape whole item-card data from all pages; separate into 500 pages at the time so code runs faster
 itemcard_1_500 <- lapply(paste0('https://cmmiinstitute.com/pars/?StateId=33296d0d-c5c5-4d47-b36b-c692d73a5ab7&PageNumber=', 1:500),
@@ -52,12 +55,12 @@ df_501_1000 <- as.data.frame(do.call(rbind, lapply(itemcard_501_1000, as.data.fr
 df_1001_1500 <- as.data.frame(do.call(rbind, lapply(itemcard_1001_1500, as.data.frame)))
 df_1501_1913 <- as.data.frame(do.call(rbind, lapply(itemcard_1500_1913, as.data.frame)))
 
-# bind dfs consecutively
+# bind dfs consecutively by rows
 df_1_1000 <- rbind(df_1_500, df_501_1000)
 df_1_1500 <- rbind(df_1_1000, df_1001_1500)
 df_1_1913 <- rbind(df_1_1500, df_1501_1913)
 
-# remove unnecesary dfs after done
+# remove unnecesary dfs thereafter
 rm(df_1_500)
 rm(df_501_1000)
 rm(df_1001_1500)
@@ -87,7 +90,9 @@ df1 <- df %>% separate(
 ```
 
 
-### 1.2 Assign SAM status, CMMI level, and other data cleaning. Search for "with SAM" or "without SAM" from the company entry and create a new column that designates the "SAM status" of the company. Repeat for ML2-5 to designate "CMMI level"
+### 1.2 Assign SAM status, CMMI level, and other data cleaning. 
+Search for "with SAM" or "without SAM" from each company entry and create a new column that designates the "SAM status" of the company. Repeat for ML2-5 to designate "CMMI level".
+
 ```{r}
 # separate out SAM, levels, etc.
 df1$sam_status <- ifelse(grepl("with SAM",df1$id_level),'with SAM',

@@ -323,6 +323,13 @@ award_cloud_migration_transformation_2 <- award_cloud_migration_transformation_2
 # Export to Excel
 write_xlsx(award_cloud_migration_transformation_2, "award_cloud_migration_transformation_2.xlsx")
 ```
+### Output:
+For more details, please see "award_cloud_migration_transformation_2.xlsx"
+
+Company | DUNS | Awards | NAICS code | NAICS description | Award description
+--------|------|------------------|------------|-------------------|------------------
+BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC | 169939688 | 3 | 541512 | COMPUTER SYSTEMS DESIGN SERVICES | CLOUD OPERATIONS AND MIGRATION SERVICES - FUNDING MOD
+
 > [BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC](https://cognosante.com/our-company/certifications-contract-vehicles/) is CMMI-SVC ML3 and ISO 9001:2015 certified. Therefore, the best approach is to start with the most stringent criteria first. The likelihood of meeting more basic criteria (e.g., CMMI Level 3 and up, ISO 9001:2015) increases when more stringent criteria (cloud migration/transformation, etc.) are met.  
 
 ## 6. Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise

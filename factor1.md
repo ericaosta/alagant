@@ -573,11 +573,11 @@ Corresponding example code for generating plots can be found [here](https://gith
 
 ### Figure 2. Percertage of awards per unique NAICS code per company with CMMI ML3 or higher.
 ![cmmi_naics_code](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_code.png)
-> **Fig. 2** Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS code, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
+> **Fig. 2** Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS codes and descriptions, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
 
 ### Figure 3. Percertage of awards per unique NAICS descriptions per company with CMMI ML3 or higher.
 ![cmmi_naics_description](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_description.png)
-> **Fig.3** Companies are on the y-axis, % awards/NAICS description on x-axis, legend depicts NAICS descriptions by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS codes and descriptions, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
+> **Fig. 3** Companies are on the y-axis, % awards/NAICS description on x-axis, legend depicts NAICS descriptions by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS codes and descriptions, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
 
 ## 3. Relationship between keywords in award descriptions and NAICS
 - Data were obtained from awards from FY2021 as shown in [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials).

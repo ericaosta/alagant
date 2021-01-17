@@ -559,24 +559,34 @@ colnames(cmmi_duns_award_select) = c("company_name","award_description","recipie
 
 
 # C. Analysis
+Corresponding example code for generating plots can be found [here](https://github.com/ericaosta/alagant/blob/main/plots/plots.md).
 
-## Relationship between CMMI level and ISO 9001:2015
+## 1. Relationship between CMMI level and ISO 9001:2015
 - Data were obtained from CMMI as shown in [#1](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3). ISO 9001:2015 were obtained by manually extracting data from individual company websites. 
 - More companies tend to have CMMI maturity level (ML) 3 than ML4 or ML5. There are more companies with ML5 than ML4. There does not seem to be a trend between CMMI level and ISO 9001:2015 certification status. However, a reliable database for ISO certification is needed to fully support this conclusion. 
 
 ### Figure 1. CMMI Levels and ISO 9001:2015 certification status in companies with SAM worldwide
 ![cmmi_iso](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_iso.png)
 
-## Relationship between companies with CMMI ML3 or higher and NAICS 
+## 2. Relationship between companies with CMMI ML3 or higher and NAICS 
 - Data were obtained from CMMI as shown in [#1](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3) and awards from FY2021 as shown in [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials).
 
 ### Figure 2. Percertage of awards per unique NAICS code per company with CMMI ML3 or higher.
 ![cmmi_naics_code](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_code.png)
-> Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS code, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
+> **Fig. 2** Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS code, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
 
 ### Figure 3. Percertage of awards per unique NAICS descriptions per company with CMMI ML3 or higher.
 ![cmmi_naics_description](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_description.png)
-> Companies are on the y-axis, % awards/NAICS description on x-axis, legend depicts NAICS descriptions by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS codes and descriptions, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
+> **Fig.3** Companies are on the y-axis, % awards/NAICS description on x-axis, legend depicts NAICS descriptions by color, and dashed line depicts the median % awards/NAICS code across all companies. For more information about NAICS codes and descriptions, please visit [NAICS & SIC Identification Tools](https://www.naics.com/search/).
+
+## 3. Relationship between keywords in award descriptions and NAICS
+- Data were obtained from awards from FY2021 as shown in [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials).
+
+### Figure 4. UFMS code. url to description.
+> **Fig. 4** Text. 
+
+### Figure 5. Cloud migra transfo code. url to description
+> **Fig. 5** Text. 
 
 
 # D. Next Steps

@@ -1,3 +1,25 @@
+# Outline
+- A. [Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#a-criteria)
+  - 1 [Capability Maturity Model Integration (CMMI) Level 3](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3)
+    - 1.1 [Web scraping and data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#11-web-scraping-and-data-cleaning)
+    - 1.2 [Assign SAM status, CMMI level, and other data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#12-assign-sam-status-cmmi-level-and-other-data-cleaning)
+    - 1.3 [Select companies with >= ML3 and with SAM](https://github.com/ericaosta/alagant/blob/main/factor1.md#13-select--companies-with--ml3-and-with-sam)
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-1)
+  - 2 [International Organization for Standardization (ISO) 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-international-organization-for-standardization-iso-90012015)
+  - 3 [CSP and Key Technology Partnerships](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-csp-and-key-technology-partnerships)
+  - 4 [Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials)
+    - 4.1 [Clean award data](https://github.com/ericaosta/alagant/blob/main/factor1.md#41-clean-award-data)
+    - 4.2 []()
+    - 4.3 []()
+    - 4.4 []()
+    - [Output]()
+  - 5 []()
+  - 6 []()
+- B. [Integration of Multiple Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#b-integration-of-multiple-criteria)
+  - 1.1
+- C. [Analysis](https://github.com/ericaosta/alagant/blob/main/factor1.md#c-analysis)
+- D. [Next steps](https://github.com/ericaosta/alagant/blob/main/factor1.md#d-next-steps)
+
 # A. Criteria
 
 ### Load packages

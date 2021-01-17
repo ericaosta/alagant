@@ -1,3 +1,4 @@
+#  Trends in award descriptions based on NAICS 
 ```{r}
 library(ggplot2)
 library(readxl)
@@ -5,8 +6,8 @@ library(readxl)
 cmmi_duns_award_select <- read_excel("cmmi_duns_award_select.xlsx")
 ```
 
-# NAICS CODE
-## Sort, calculate medians, and percentages
+## NAICS CODE
+### Sort, calculate medians, and percentages
 ```{r}
 naics_code_groups <- cmmi_duns_award_select %>%
   dplyr::count(naics_code, company_name, sort=TRUE) %>%
@@ -20,7 +21,7 @@ naics_code_groups <- cmmi_duns_award_select %>%
 naics_code_groups$median_below_above <- ifelse(naics_code_groups$percentage_naics < 1.703578, "below", "above")
 naics_code_groups$`NAICS code` <- as.character(naics_code_groups$naics_code)
 ```
-## Plot
+### Plot
 ```{r}
 ggplot(naics_code_groups, aes(x = reorder(company_name, percentage_naics), y = percentage_naics, label=percentage_naics)) + 
   geom_point(stat='identity', aes(col=`NAICS code`), size=8) +
@@ -35,8 +36,8 @@ ggplot(naics_code_groups, aes(x = reorder(company_name, percentage_naics), y = p
   theme_classic() 
 ```
 
-# NAICS DESCRIPTION
-## Sort, calculate medians, and percentages
+## NAICS DESCRIPTION
+### Sort, calculate medians, and percentages
 
 ```{r}
 naics_description_groups <- cmmi_duns_award_select %>%

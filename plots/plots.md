@@ -35,6 +35,9 @@ ggplot(naics_code_groups, aes(x = reorder(company_name, percentage_naics), y = p
   annotate("text", y = 3.5, x = 1.5, label= "Median") +
   theme_classic() 
 ```
+### Output:
+![CMMI NAICS CODE](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_code.png)
+
 
 ## NAICS DESCRIPTION
 ### Sort, calculate medians, and percentages
@@ -73,3 +76,5 @@ ggplot(naics_description_groups, aes(x = reorder(company_name, percentage_naics)
   annotate("text", y = 1, x = 0.55, label= "Median") +
   theme_classic() 
 ```
+### Output:
+![CMMI NAICS DESCRIPTION](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_naics_description.png)

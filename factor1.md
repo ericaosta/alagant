@@ -1,23 +1,34 @@
 # Outline
 - A. [Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#a-criteria)
-  - 1 [Capability Maturity Model Integration (CMMI) Level 3](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3)
+  - 1. [Capability Maturity Model Integration (CMMI) Level 3](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3)
     - 1.1 [Web scraping and data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#11-web-scraping-and-data-cleaning)
     - 1.2 [Assign SAM status, CMMI level, and other data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#12-assign-sam-status-cmmi-level-and-other-data-cleaning)
     - 1.3 [Select companies with >= ML3 and with SAM](https://github.com/ericaosta/alagant/blob/main/factor1.md#13-select--companies-with--ml3-and-with-sam)
     - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-1)
-  - 2 [International Organization for Standardization (ISO) 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-international-organization-for-standardization-iso-90012015)
-  - 3 [CSP and Key Technology Partnerships](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-csp-and-key-technology-partnerships)
-  - 4 [Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials)
+  - 2. [International Organization for Standardization (ISO) 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-international-organization-for-standardization-iso-90012015)
+  - 3. [CSP and Key Technology Partnerships](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-csp-and-key-technology-partnerships)
+  - 4. [Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials)
     - 4.1 [Clean award data](https://github.com/ericaosta/alagant/blob/main/factor1.md#41-clean-award-data)
-    - 4.2 []()
-    - 4.3 []()
-    - 4.4 []()
-    - [Output]()
-  - 5 []()
-  - 6 []()
+    - 4.2 [Create a list of DUNS per company](https://github.com/ericaosta/alagant/blob/main/factor1.md#42-create-a-list-of-duns-per-company)
+    - 4.3 [Clean company names with regular expressions](https://github.com/ericaosta/alagant/blob/main/factor1.md#43-clean-company-names-with-regular-expressions)
+    - 4.4 [Search for "UFMS" and "ORACLE FINANCIAL" patterns in award descriptions](https://github.com/ericaosta/alagant/blob/main/factor1.md#44-search-for-ufms-and-oracle-financial-patterns-in-award-descriptions)
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-4)
+  - 5. [Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation)
+    - 5.1 [Search for "CLOUD" patterns in award descriptions](https://github.com/ericaosta/alagant/blob/main/factor1.md#51-search-for-cloud-patterns-in-award-descriptions)
+    - 5.2 [Search for "MIGRAT" and "TRANSFO" patterns in award descriptions within "CLOUD"](https://github.com/ericaosta/alagant/blob/main/factor1.md#search-for-migrat-and-transfo-patterns-in-award-descriptions-within-cloud) 
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-5)
+  - 6. [Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise](https://github.com/ericaosta/alagant/blob/main/factor1.md#6-demonstrate-experience-with-at-least-two-2-or-more-fedramp-operational-expertise)
 - B. [Integration of Multiple Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#b-integration-of-multiple-criteria)
-  - 1.1
+  - 1. [Match CMMI data to award data](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-match-cmmi-data-to-award-data)
+    - 1.1 [Prepare environment](https://github.com/ericaosta/alagant/blob/main/factor1.md#11-prepare-environment)
+    - 1.2 [Clean CMMI company names with regular expressions](https://github.com/ericaosta/alagant/blob/main/factor1.md#12-clean-cmmi-company-names-with-regular-expressions)
+    - 1.3 [Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies](https://github.com/ericaosta/alagant/blob/main/factor1.md#13-join-ccmi-data-to-duns-to-assign-duns-to-cmmi-filtered-companies)
+    - 1.4 [Join CMMI data to awards data by DUNS](https://github.com/ericaosta/alagant/blob/main/factor1.md#14-join-cmmi-data-to-awards-data-by-duns)
+  - 2. [Match SAM data to award data]()
 - C. [Analysis](https://github.com/ericaosta/alagant/blob/main/factor1.md#c-analysis)
+  - 1. [Relationship between CMMI level and ISO 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-relationship-between-cmmi-level-and-iso-90012015)
+  - 2. [Relationship between companies with CMMI ML3 or higher and NAICS](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-relationship-between-companies-with-cmmi-ml3-or-higher-and-naics)
+  - 3. [Relationship between keywords in award descriptions and NAICS](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-relationship-between-keywords-in-award-descriptions-and-naics)
 - D. [Next steps](https://github.com/ericaosta/alagant/blob/main/factor1.md#d-next-steps)
 
 # A. Criteria
@@ -323,7 +334,7 @@ award_cloud_usa <- award_terms %>%
 > Note: Awards containing the word "cloud" are more likely to have NAICS related to "OTHER COMPUTER RELATED SERVICES" and code 541519. 
 
 
-###  Search for "MIGRAT" and "TRANSFO" patterns in award descriptions within "CLOUD"
+###  5.2 Search for "MIGRAT" and "TRANSFO" patterns in award descriptions within "CLOUD"
 Search for words containing "migrat" and "transfo" within the "cloud"-containing awards and create a new column that designates the "migration" or "transformation" status of the award description. 
 
 ```{r}

@@ -144,19 +144,23 @@ cmmi_final <- rbind(cmmi_sam_ml3, cmmi_sam_ml4, cmmi_sam_ml5)
 library(writexl)
 write_xlsx(cmmi_final, "cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
 ```
+### Output for Criterium #1:
+[CMMI ML3-5](https://github.com/ericaosta/alagant/blob/main/cmmi_2021_sam_ML3_ML4_ML5_world.xlsx)
 
 ## 2. International Organization for Standardization (ISO) 9001:2015
-
-I have yet to find a reliable database for companies with ISO certification status. Hoshang has yet to deliver. For now, companies that meet criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us are more likely to be ISO 9001 certified. 
+- I have yet to find a reliable database for companies with ISO certification status. Hoshang has yet to deliver. 
+- I manually collected ISO 9001:2015 status from websites from companies that met the CMMI criterium. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a certification but may not show it on their website. 
+-  Companies that meet criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us are more likely to be ISO 9001 certified. 
 
 ## 3. CSP and Key Technology Partnerships
-
-I will contact AWS, Oracle, Azure. For now, criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us leads for companies that meet this criterium. 
+- I will contact AWS, Oracle, Azure. 
+- I manually collected CSPs from websites from companies that met the CMMI criterium. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a partnership but may not show details on their website. 
+- Criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us leads for companies that meet this criterium. 
 
 ## 4. Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials
 
 ### 4.1 Clean award data
-Reduce dimentionality of awards data ("awards_fy21") from >200 columns to name of company, DUNS, award description, NAICS, CAGE, and country of company. Depending on the objectively, other columns will be selected accordingly. 
+Reduce dimentionality of awards data ("awards_fy21") from >200 columns to name of company, DUNS, award description, NAICS, CAGE, and country of company. Depending on the objectively, other columns will be selected accordingly. **IMPORTANT**: Please note that this code and subsequent analysis uses *ONLY* award data from fiscal year 2021 as a proof-of-concept. A more thorough analysis will require the aggregate data from FY18-current. 
 
 ```{r}
 # Read csv file with awards data from FY21; plan to directly unzip and load from url in the future. 
@@ -269,8 +273,8 @@ award_ufms_usa_3 <- award_ufms_usa_3[!duplicated(award_ufms_usa_3$recipient_duns
 # Export data to Excel
 write_xlsx(award_ufms_usa_3, "award_ufms_usa_3.xlsx")
 ```
-### Output:
-For more details, please see "award_ufms_usa_3.xlsx"
+### Output for Criterium #4:
+[Companies with at least 3 projects involving Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/award_ufms_usa_3.xlsx)
 
 Company | DUNS | Awards | NAICS code | NAICS description | Award description
 --------|------|------------------|------------|-------------------|------------------
@@ -329,8 +333,8 @@ award_cloud_migration_transformation_2 <- award_cloud_migration_transformation_2
 # Export to Excel
 write_xlsx(award_cloud_migration_transformation_2, "award_cloud_migration_transformation_2.xlsx")
 ```
-### Output:
-For more details, please see "award_cloud_migration_transformation_2.xlsx"
+### Output for Criterium #5:
+[Companies with at least 2 projects involving Cloud Migration and Transformation](https://github.com/ericaosta/alagant/blob/main/award_cloud_migration_transformation_2.xlsx)
 
 Company | DUNS | Awards | NAICS code | NAICS description | Award description
 --------|------|------------------|------------|-------------------|------------------
@@ -339,7 +343,7 @@ BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC | 169939688 | 3 | 541512 | COMPUTE
 > [BUSINESS INFORMATION TECHNOLOGY SOLUTIONS LLC](https://cognosante.com/our-company/certifications-contract-vehicles/) is CMMI-SVC ML3 and ISO 9001:2015 certified. Therefore, the best approach is to start with the most stringent criteria first. The likelihood of meeting more basic criteria (e.g., CMMI Level 3 and up, ISO 9001:2015) increases when more stringent criteria (cloud migration/transformation, etc.) are met.  
 
 ## 6. Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise
-Text
+Most of these companies will already have this experience. 
 
 # B. Integration of Multiple Criteria
 

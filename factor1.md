@@ -387,7 +387,7 @@ Most of these companies will already have this experience.
 # Read xlsl file with cmmi data
 cmmi <- read_excel("cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
 
-# country names for companies from CMMI list; had to be manually collected as a proof-of-concept for future analyses
+# Country names for companies from CMMI list; had to be manually collected as a proof-of-concept for future analyses
 country <- list(
   "AASKI Technologies (A Mag Aerospace Company)" = "USA", 
   "Adams Communication & Engineering Technology, Inc."= "USA",
@@ -470,7 +470,6 @@ country <- list(
   "Tata Consultancy Services Limited" = "India",
   "Wipro Limited" = "India",
   "Yash Technologies Pvt. Ltd." = "USA")
-
 ```
 
 ### 1.2 Clean CMMI company names with regular expressions
@@ -563,11 +562,8 @@ countries_select <- countries_cmmi %>%
 colnames(countries_select) <- c("country", "Name", "y", "sam_status", "level_status")
 ```
 
-
-
 ### 1.3 Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies
 ```{r}
-
 # Inner join companies from CMMI list ('cmmi') and DUNS list FY21 ('). Each row represents a unique DUNS. It seems like one company can have multiple DUNS. 
 
 # cmmi ML3 >=3 and SAM in USA
@@ -576,24 +572,34 @@ anti_cmmi_duns_usa <- anti_join(countries_select, duns_fy21_usa, by="y", suffix=
 
 # There are a total of 27 unique companies from CMMI matched to their DUNS. Success rate of approach = 27/41 = 66% (out of total unique companies from 'countries_select'). Improving the regex and adding DUNS from previous fiscal years could increase the success rate of matching DUNS from usaspending.gov to data from scraped websites such as cmmiinstitute.com
 unique(cmmi_duns_usa$Name)
-
 ```
-
-
 
 ### 1.4 Join CMMI data to awards data by DUNS
 ```{r}
-
-# Award in USA for companies with cmmi and select only relevant columns, such as award_description, recipient_duns, naics_code, naics_description
+# Award data in USA for companies with CMMI and select only relevant columns, such as award_description, recipient_duns, naics_code, naics_description
 cmmi_duns_award <- inner_join(cmmi_duns_usa, awards_fy21_select, by="recipient_duns", suffix = c("_cmmi","_award"))
 cmmi_duns_award_select <- dplyr::select(cmmi_duns_award, y, award_description, recipient_duns, naics_code_cmmi, naics_description, sam_status, level_status, cage_code_cmmi)
 
-# consider filtering instead of 5182|518210
-
+# Clean column names
 colnames(cmmi_duns_award_select) = c("company_name","award_description","recipient_duns","naics_code", "naics_description", "sam_status", "cmmi_level", "cage_code")
-
 ```
+## 2. Match CMMI data with [output for #4](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-4) and/or [output for #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-5)
 
+### 2.1 Match CMMI data with output for #4
+```{r}
+# join with cmmi 
+inner_join(award_ufms_usa_3, cmmi_duns_usa, by="recipient_duns")
+```
+> No matches were found using this approach. This is *not* accurate. For instance, CGI FEDERAL, INC. reports having a CMMI-SVC ML3 on their website. Therefore, the following need to be addressed: (1) the CMMI Institute website needs to be updated to accurately represent current data, (2) improvement/optimization of regex to standarize company names, and (3) search for other potential and reliable websites to scrape CMMI data.
+
+### 2.3 Match CMMI data with output for #5
+```{r}
+# join with cmmi 
+inner_join(award_cloud_migration_transformation_2, cmmi_duns_usa, by="recipient_duns")
+```
+> No matches were found using this approach. This is *not* accurate. For instance, BUSINESS INFORMATION TECHNOLOGY SOLUTIONS, LLC. reports having a CMMI-SVC ML3 on their website. Therefore, the following need to be addressed: (1) the CMMI Institute website needs to be updated to accurately represent current data, (2) improvement/optimization of regex to standarize company names, and (3) search for other potential and reliable websites to scrape CMMI data.
+
+## 3. Match SAM data and award data and matching with other criteria 
 
 # C. Analysis
 Corresponding example code for generating plots can be found [here](https://github.com/ericaosta/alagant/blob/main/plots/plots.md).

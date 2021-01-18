@@ -677,4 +677,4 @@ Corresponding example code for generating plots can be found [here](https://gith
 - Aggregating award data for FY2018-21 to generate a comprehensive and reliable company-DUNS list and award data.
 - Determining a reliable source for companies and their CSPs and ISO certifications
 - Optimizing regex to standarize company names
-- Simplify code, write functions, and create a package/software for automatization
+- Simplifying code, writing functions, and creating a package/software for automatization

@@ -24,7 +24,12 @@
     - 1.2 [Clean CMMI company names with regular expressions](https://github.com/ericaosta/alagant/blob/main/factor1.md#12-clean-cmmi-company-names-with-regular-expressions)
     - 1.3 [Join CCMI data to DUNS to assign DUNS to CMMI-filtered companies](https://github.com/ericaosta/alagant/blob/main/factor1.md#13-join-ccmi-data-to-duns-to-assign-duns-to-cmmi-filtered-companies)
     - 1.4 [Join CMMI data to awards data by DUNS](https://github.com/ericaosta/alagant/blob/main/factor1.md#14-join-cmmi-data-to-awards-data-by-duns)
-  - 2 [Match SAM data to award data]()
+  - 2 [Match CMMI data with output for #4 and/or output for #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-match-cmmi-data-with-output-for-4-andor-output-for-5)
+    - 2.1 [Match CMMI data with output for #4](https://github.com/ericaosta/alagant/blob/main/factor1.md#21-match-cmmi-data-with-output-for-4)
+    - 2.2 [Match CMMI data with output for #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#22-match-cmmi-data-with-output-for-5)
+  - 3 [Match SAM data and award data and matching with other criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-match-sam-data-and-award-data-and-matching-with-other-criteria)
+    - 3.1 [Clean SAM data](https://github.com/ericaosta/alagant/blob/main/factor1.md#31-clean-sam-data)
+    - 3.2 [Match SAM status to data from output #4 and #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#32-match-sam-status-to-output-from-output-4-and-5)
 - C. [Analysis](https://github.com/ericaosta/alagant/blob/main/factor1.md#c-analysis)
   - 1 [Relationship between CMMI level and ISO 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-relationship-between-cmmi-level-and-iso-90012015)
   - 2 [Relationship between companies with CMMI ML3 or higher and NAICS](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-relationship-between-companies-with-cmmi-ml3-or-higher-and-naics)
@@ -622,7 +627,7 @@ sam_awards_usa <- sam_awards_usa[!duplicated(sam_awards_usa$recipient_duns),] %>
   dplyr::select(recipient_name_award, recipient_duns, naics_code_award, naics_description_award, sam_status)
 ```
 
-### 3.2 Match SAM status to output from output #4 and #5
+### 3.2 Match SAM status to data from output #4 and #5
 ```{r}
 # Crit 4; not successful
 sam_award_crit_4 <- award_cloud_migration_transformation_2 %>%

@@ -600,6 +600,39 @@ inner_join(award_cloud_migration_transformation_2, cmmi_duns_usa, by="recipient_
 > No matches were found using this approach. This is *not* accurate. For instance, BUSINESS INFORMATION TECHNOLOGY SOLUTIONS, LLC. reports having a CMMI-SVC ML3 on their website. Therefore, the following need to be addressed: (1) the CMMI Institute website needs to be updated to accurately represent current data, (2) improvement/optimization of regex to standarize company names, and (3) search for other potential and reliable websites to scrape CMMI data.
 
 ## 3. Match SAM data and award data and matching with other criteria 
+### 3.1 Clean SAM data
+```{r}
+# Match SAM data with award data
+library(readxl)
+sam_companies <- read_excel("https://github.com/ericaosta/alagant/blob/main/company-unique-list.xlsx") # from Andrew
+View(sam_companies)
+
+sam_awards_usa <- sam_companies %>%
+  select(Name, DUNS, Country) %>%
+  filter(Country == "UNITED STATES")
+
+colnames(sam_awards_usa) <- c("recipient_name", "recipient_duns", "recipient_country_name")
+sam_awards_usa$recipient_duns <- as.character(sam_awards_usa$recipient_duns)
+
+sam_awards_usa <- sam_awards_usa %>%
+  inner_join(awards_select, by="recipient_duns", suffix = c("_sam", "_award")) 
+
+sam_awards_usa <- sam_awards_usa[!duplicated(sam_awards_usa$recipient_duns),] %>%
+  dplyr::mutate(sam_status = paste("with SAM")) %>%
+  dplyr::select(recipient_name_award, recipient_duns, naics_code_award, naics_description_award, sam_status)
+```
+
+### 3.2 Match SAM status to output from output #4 and #5
+```{r}
+# Crit 4; not successful
+sam_award_crit_4 <- award_cloud_migration_transformation_2 %>%
+  dplyr::inner_join(sam_awards_usa, by="recipient_duns", suffix = c("_crit4", "_sam"))
+
+# Crit 5; not successful
+sam_award_crit_5 <- award_ufms_usa_3 %>%
+  dplyr::inner_join(sam_awards_usa, by="recipient_duns", suffix = c("_crit4", "_sam"))
+```
+> No matches were found using this approach. It is likely due to the *limited award data* (i.e., only working with FY2021). By aggregating award data for FY2018-21, it is likely to get hits for matches. 
 
 # C. Analysis
 Corresponding example code for generating plots can be found [here](https://github.com/ericaosta/alagant/blob/main/plots/plots.md).
@@ -608,7 +641,7 @@ Corresponding example code for generating plots can be found [here](https://gith
 - Data were obtained from CMMI as shown in [#1](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-capability-maturity-model-integration-cmmi-level-3). ISO 9001:2015 were obtained by manually extracting data from individual company websites. 
 - More companies tend to have CMMI maturity level (ML) 3 than ML4 or ML5. There are more companies with ML5 than ML4. There does not seem to be a trend between CMMI level and ISO 9001:2015 certification status. However, a reliable database for ISO certification is needed to fully support this conclusion. 
 
-### Figure 1. CMMI Levels and ISO 9001:2015 certification status in companies with SAM worldwide
+### Figure 1. CMMI Levels and ISO 9001:2015 certification status in companies with SAM worldwide.
 ![cmmi_iso](https://github.com/ericaosta/alagant/blob/main/plots/cmmi_iso.png)
 
 ## 2. Relationship between companies with CMMI ML3 or higher and NAICS 
@@ -625,12 +658,18 @@ Corresponding example code for generating plots can be found [here](https://gith
 ## 3. Relationship between keywords in award descriptions and NAICS
 - Data were obtained from awards from FY2021 as shown in [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials).
 
-### Figure 4. UFMS code. url to description.
-> **Fig. 4** Text. 
+### Figure 4.  Relationship between "UFMS" and "ORACLE FINANCIAL" in award descriptions and NAICS. 
+![ufms oracle financials naics](https://github.com/ericaosta/alagant/blob/main/plots/ufms_naics_code.png)
+> **Fig. 4** Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. Plot with NAICS descriptions can be found [here](https://github.com/ericaosta/alagant/blob/main/plots/ufms_naics_description.png).
 
-### Figure 5. Cloud migra transfo code. url to description
-> **Fig. 5** Text. 
+### Figure 5. Relationship between "CLOUD", "MIGRAT" and "TRANSFO" in award descriptions and NAICS. 
+![cloud migrat transfo naics](https://github.com/ericaosta/alagant/blob/main/plots/cloud_migration_transformation.png)
+> **Fig. 5** Companies are on the y-axis, % awards/NAICS code on x-axis, legend depicts NAICS code by color, and dashed line depicts the median % awards/NAICS code across all companies. They keywords "MIGRAT" and "TRANSFO" were searched in a subset of companies that were all positive for the keyword "CLOUD" in their award desxcriptions. Plot with NAICS descriptions can be found [here](https://github.com/ericaosta/alagant/blob/main/plots/cloud_migration_transformation_description.png).
 
 
 # D. Next Steps
-- Subsetting migrat:transfor in cloud (~ cloud and migrat|transfo) vs. cloud|migrat|transfo; assess sensitivity vs. specificity
+- Subsetting migrat:transfor in cloud (~ cloud and migrat|transfo) vs. cloud|migrat|transfo to assess sensitivity vs. specificity
+- Aggregating award data for FY2018-21 to generate a comprehensive and reliable company-DUNS list and award data.
+- Determining a reliable source for companies and their CSPs and ISO certifications
+- Optimizing regex to standarize company names
+- Simplify code, write functions, and create a package/software for automatization

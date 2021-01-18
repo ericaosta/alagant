@@ -592,7 +592,7 @@ inner_join(award_ufms_usa_3, cmmi_duns_usa, by="recipient_duns")
 ```
 > No matches were found using this approach. This is *not* accurate. For instance, CGI FEDERAL, INC. reports having a CMMI-SVC ML3 on their website. Therefore, the following need to be addressed: (1) the CMMI Institute website needs to be updated to accurately represent current data, (2) improvement/optimization of regex to standarize company names, and (3) search for other potential and reliable websites to scrape CMMI data.
 
-### 2.3 Match CMMI data with output for #5
+### 2.2 Match CMMI data with output for #5
 ```{r}
 # join with cmmi 
 inner_join(award_cloud_migration_transformation_2, cmmi_duns_usa, by="recipient_duns")

@@ -4,7 +4,7 @@
     - 1.1 [Web scraping and data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#11-web-scraping-and-data-cleaning)
     - 1.2 [Assign SAM status, CMMI level, and other data cleaning](https://github.com/ericaosta/alagant/blob/main/factor1.md#12-assign-sam-status-cmmi-level-and-other-data-cleaning)
     - 1.3 [Select companies with >= ML3 and with SAM](https://github.com/ericaosta/alagant/blob/main/factor1.md#13-select--companies-with--ml3-and-with-sam)
-    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-1)
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterion-1)
   - 2 [International Organization for Standardization (ISO) 9001:2015](https://github.com/ericaosta/alagant/blob/main/factor1.md#2-international-organization-for-standardization-iso-90012015)
   - 3 [CSP and Key Technology Partnerships](https://github.com/ericaosta/alagant/blob/main/factor1.md#3-csp-and-key-technology-partnerships)
   - 4 [Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials)
@@ -12,11 +12,11 @@
     - 4.2 [Create a list of DUNS per company](https://github.com/ericaosta/alagant/blob/main/factor1.md#42-create-a-list-of-duns-per-company)
     - 4.3 [Clean company names with regular expressions](https://github.com/ericaosta/alagant/blob/main/factor1.md#43-clean-company-names-with-regular-expressions)
     - 4.4 [Search for "UFMS" and "ORACLE FINANCIAL" patterns in award descriptions](https://github.com/ericaosta/alagant/blob/main/factor1.md#44-search-for-ufms-and-oracle-financial-patterns-in-award-descriptions)
-    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-4)
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterion-4)
   - 5 [Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation)
     - 5.1 [Search for "CLOUD" patterns in award descriptions](https://github.com/ericaosta/alagant/blob/main/factor1.md#51-search-for-cloud-patterns-in-award-descriptions)
     - 5.2 [Search for "MIGRAT" and "TRANSFO" patterns in award descriptions within "CLOUD"](https://github.com/ericaosta/alagant/blob/main/factor1.md#search-for-migrat-and-transfo-patterns-in-award-descriptions-within-cloud) 
-    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-5)
+    - [Output](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterion-5)
   - 6 [Demonstrate Experience with at Least Two (2) or More FedRAMP Operational Expertise](https://github.com/ericaosta/alagant/blob/main/factor1.md#6-demonstrate-experience-with-at-least-two-2-or-more-fedramp-operational-expertise)
 - B. [Integration of Multiple Criteria](https://github.com/ericaosta/alagant/blob/main/factor1.md#b-integration-of-multiple-criteria)
   - 1 [Match CMMI data to award data](https://github.com/ericaosta/alagant/blob/main/factor1.md#1-match-cmmi-data-to-award-data)
@@ -182,18 +182,18 @@ cmmi_final <- rbind(cmmi_sam_ml3, cmmi_sam_ml4, cmmi_sam_ml5)
 library(writexl)
 write_xlsx(cmmi_final, "cmmi_2021_sam_ML3_ML4_ML5_world.xlsx")
 ```
-### Output for Criterium #1:
+### Output for Criterion #1:
 [CMMI ML3-5](https://github.com/ericaosta/alagant/blob/main/cmmi_2021_sam_ML3_ML4_ML5_world.xlsx)
 
 ## 2. International Organization for Standardization (ISO) 9001:2015
 - I have yet to find a reliable database for companies with ISO certification status. Hoshang has yet to deliver. 
-- I manually collected ISO 9001:2015 status from websites from companies that met the CMMI criterium. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a certification but may not show it on their website. 
+- I manually collected ISO 9001:2015 status from websites from companies that met the CMMI criterion. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a certification but may not show it on their website. 
 -  Companies that meet criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us are more likely to be ISO 9001 certified. 
 
 ## 3. CSP and Key Technology Partnerships
 - I will contact AWS, Oracle, Azure. 
-- I manually collected CSPs from websites from companies that met the CMMI criterium. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a partnership but may not show details on their website. 
-- Criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us leads for companies that meet this criterium. 
+- I manually collected CSPs from websites from companies that met the CMMI criterion. Please see the data [here](https://github.com/ericaosta/alagant/blob/main/cmmi_with_iso_status.xlsx). Please note that some websites may have a partnership but may not show details on their website. 
+- Criteria [#4](https://github.com/ericaosta/alagant/blob/main/factor1.md#4-demonstrate-experience-with-at-least-three-3-projects-implementing-and-upgrading-oracle-federal-financials) and/or [#5](https://github.com/ericaosta/alagant/blob/main/factor1.md#5-demonstrate-experience-with-at-least-two-2-projects-leading-supporting-cloud-migrationtransformation) can give us leads for companies that meet this criterion. 
 
 ## 4. Demonstrate Experience with at Least Three (3) Projects Implementing and Upgrading Oracle Federal Financials
 
@@ -311,7 +311,7 @@ award_ufms_usa_3 <- award_ufms_usa_3[!duplicated(award_ufms_usa_3$recipient_duns
 # Export data to Excel
 write_xlsx(award_ufms_usa_3, "award_ufms_usa_3.xlsx")
 ```
-### Output for Criterium #4:
+### Output for Criterion #4:
 [Companies with at least 3 projects involving Oracle Federal Financials](https://github.com/ericaosta/alagant/blob/main/award_ufms_usa_3.xlsx)
 
 Company | DUNS | Awards | NAICS code | NAICS description | Award description
@@ -325,7 +325,6 @@ INTEGRATED MEDICAL SOLUTIONS, INC | 841580934 | 6 | 621399 | OFFICES OF ALL OTHE
 ## 5. Demonstrate Experience with at Least Two (2) Projects Leading Supporting Cloud Migration/Transformation
 
 ### 5.1 Search for "CLOUD" patterns in award descriptions
-Text
 ```{r}
 award_terms <- awards_fy21_select
 
@@ -371,7 +370,7 @@ award_cloud_migration_transformation_2 <- award_cloud_migration_transformation_2
 # Export to Excel
 write_xlsx(award_cloud_migration_transformation_2, "award_cloud_migration_transformation_2.xlsx")
 ```
-### Output for Criterium #5:
+### Output for Criterion #5:
 [Companies with at least 2 projects involving Cloud Migration and Transformation](https://github.com/ericaosta/alagant/blob/main/award_cloud_migration_transformation_2.xlsx)
 
 Company | DUNS | Awards | NAICS code | NAICS description | Award description
@@ -588,7 +587,7 @@ cmmi_duns_award_select <- dplyr::select(cmmi_duns_award, y, award_description, r
 # Clean column names
 colnames(cmmi_duns_award_select) = c("company_name","award_description","recipient_duns","naics_code", "naics_description", "sam_status", "cmmi_level", "cage_code")
 ```
-## 2. Match CMMI data with [output for #4](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-4) and/or [output for #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterium-5)
+## 2. Match CMMI data with [output for #4](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterion-4) and/or [output for #5](https://github.com/ericaosta/alagant/blob/main/factor1.md#output-for-criterion-5)
 
 ### 2.1 Match CMMI data with output for #4
 ```{r}

@@ -1,4 +1,5 @@
 # 1. Result of the project
+- **UPTADE: No companies for FY2021-18 yet (updated on 01-22-21, 3:58 PM CST). Revising code. Previous outputs were based on fulfilling criteria 4 *OR* 5.**
 - [FACTOR 1 FY2018](https://github.com/ericaosta/alagant/blob/main/F1/factor1_FY2018.xlsx)
 - [FACTOR 1 FY2019](https://github.com/ericaosta/alagant/blob/main/F1/factor1_FY2019.xlsx)
 - [FACTOR 1 FY2020](https://github.com/ericaosta/alagant/blob/main/F1/factor1_FY2020.xlsx) 

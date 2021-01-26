@@ -1,5 +1,5 @@
 # Alagant Tech, LLC
 Erica Osta, Data Scientist
 
-- [NBS Modernization Factor 1 - by Fiscal Year](https://github.com/ericaosta/alagant/blob/main/F1/F1.md), **last updated on 01-26-2021 8:44 AM CST**
+- [NBS Modernization Factor 1 - ALL Fiscal Years](https://github.com/ericaosta/alagant/blob/main/F1/F1.md), **last updated on 01-26-2021 8:44 AM CST**
 - [Comments](https://github.com/ericaosta/alagant/blob/main/comments.md)

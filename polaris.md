@@ -100,7 +100,7 @@ TBD
 	
 ### Interpretation & Algorithms
 
-#### Best Value	For Polaris, Highest Technically Rated Qualifying Offerors ==
+#### Best Value	For Polaris, Highest Technically Rated Qualifying Offerors
 - FAR 15.101 = 1 | >1 ∃! company (i.e., "source selection approach") combo 
 - IF ELSE looped through all possible combinations 
 - IF (company 1 ≥ "threshold score") THEN "HTRQO", ELSE (company 1 + company N + ... ≥ "threshold score") THEN "HTRQO"

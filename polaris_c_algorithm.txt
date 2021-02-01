@@ -1,0 +1,109 @@
+# Data Required
+	AWARDS DATA USASPENDING.GOV FY08-21
+	
+# Interpretation & Algorithms
+
+## INNOVATIVE SOLUTIONS = Emerging Technologies, Performance Areas
+
+## Emerging Technologies
+
+EMERGING TECH	=     {  
+
+                    "Adv/Quantum Comp" = (
+                  			"CRYPTO"|"ENCRYPT"|("SECUR"&|COMMUNICAT")|
+                  			("HIGH"&"PERFORM"&("COMPUT"|"CLUSTER"|"NETWORK"))|
+                  			("QUANTUM"&"MACHINE"|"LEARN"|"COMPUT")|"QUANTUM COMP"|
+                  			"QUANTUM MACHINE"
+                  			),
+                  			
+                  			# AND/OR
+                  			
+                  	"AI" = (
+                  			("COMPUT"&"VISION")|("DEEP LEARN")|("MACHINE"&"LEARN")|"NLP"|
+                  			"NATURAL LANGUAGE PROCESS"|"SPATIAL COMP"|"SPEECH RECOGNIT"
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"Automation Tech" = (
+                  			"ROBOTIC PROCESS AUTOMATION"|"RPA"|("AUTOMAT"&"MESSAG")|
+                  			("DATA CLEAN"&("SCRIPT"|"AUTOMAT))|"IVR"|"INTERACTIVE VOICE RESPON"|
+                  			"SMART NOTIFICAT"
+                  			),
+                  	
+                  			# AND/OR
+                  
+                  	"DLT"	= (
+                  			"BLOCKCHAIN"|"DLT"|"SMART CONTRACT PROGRAM"
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"Edge Computing" 	= (
+                  			"5G"|"EDGE ANALIT"|"EDGE APPLICAT"|"EDGE COMPUT"|"INTERNET OF THINGS"|
+                  			"IOT"
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"Immersive Tech" 	= (
+                  	    "VIRTUAL REALIT"|"VR"|"AUGMENTED REALIT"
+                  	    )
+                  	    
+                  	 }
+
+## Performance Areas
+
+PERFORM AREAS	=     {  
+
+                    "Cloud Services" = (
+                  			"APPLICATION INTEGRATION"|"CLOUD"|"INFRASTRUCTURE AS A 
+                  			SERVICE"|"IAAS"|"PLATFORM AS A SERVIVE"|"PAAS"|"SOFTWARE AS A SERVICE"|"SAAS"
+                  			),
+                  			
+                  			# AND/OR
+                  			
+                  	"Cibersecurity" = (
+                  			"(CONTINUOUS"&("DIAGNOSTIC"|"MITIGAT"))|"CONTINUOUS SECURITY 
+                  			MONITOR"|"IDENTITY MANAG"|"ACCESS MANAG"|"INFORMATION 
+                  			ASSURANCE"|"CIBERSECUR"|"INTRUSION DETECT"|("IT"&("DISASTER 
+                  			RECOVERY"|"INCIDENT RESPON"))|"MOBILE THREAT PROTECT"|"NETWORK SECURITY 
+                  			MONITOR"|"SECURITY ASSESSMENT"|"VULNERABILITY ANALY"|"THREAT HUNT"|"ZERO 
+                  			TRUST ARCHITECT"
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"Data Management" = (
+                  			("DATA"&("ARCHITECT"|"ANALY"|"DESIGN"|"GOVERNANCE"|"MIGRAT"|"QUALITY 
+                  			MANAG"|"SCIEN"|"SECURITY"|"WAREHOUS"))|"STORAGE MANAG"
+                  			),
+                  	
+                  			# AND/OR
+                  
+                  	"Information and Communic. Tech"	= (
+                  	    "COLLABORATION TECH"|"IPV6"|"INTERNET PROTOCOL VERISON 6"|"NAAS"|"NETWORK AS 
+                  	    A SERVICE"|"NAAS"|"SOFTWARE DEFINED WIDE AREA NETWORKING IMPLEMENTATION"|("SD"&"WAN")|"TELEPRESENCE"|"VPN"|"VIRTUAL PRIVATE NETWORK"|"REMOTE NETWORK 
+                  	    ACCESS"|"VIRTUALIZATION"|"VOICE OVER IP"|"VOIP"|"WIRELESS"|"5G"|"MOBILITY AS A SERVICE"|"MAAS"|"MOBILE BACKEND AS A SERVICE"|"MBAAS"
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"IT Operations and Maintenance" 	= (
+                  			"BRING YOUR OWN DEVICE"|"BYOD"|"DATA CENTER MANANG"|(("FILE SERVER")&"MANAGE)"|(("EMAIL SERVER")&"MANAGE)"|("IT"&("HELPDESK"|"SUPPORT"|"TRAIN"))|"MOBILE DEVIDE 
+                  			MANAGE"|"PC PROVISION"|"(MANAGE"&("SERVER"|"DEVICE"))
+                  			),
+                  
+                  			# AND/OR
+                  
+                  	"Software Development" 	= (
+                  	    "(SOFTWARE"&("DESIGN"|"MAINTEN"|"PROGRAMMING"|"TESTING"))|"WEB DEVELOP|"MOBILE APP DEVELOP"|"MOBILE APPLICATION DEVELOP"
+                  	    )
+                  	    
+                  	    # AND/OR
+                  	    
+                  	 "System Design" 	= (
+                  	    """
+                  	    )  
+                  	    
+                  	 }

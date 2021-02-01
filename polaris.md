@@ -54,7 +54,7 @@ TBD
 
 - L_5_2_3 = "Emerging Technology Relevant Experience"
 - ≥ 150 K USD per project
-- ≥ 1 INNOVATIVE SOLUTIONS (SEE "polaris_c_algorithm.txt")
+- ≥ 1 INNOVATIVE SOLUTIONS (SEE ["polaris_c_algorithm.txt"](https://github.com/ericaosta/alagant/blob/main/polaris_c_algorithm.txt))
 - See M.6 SCORING TABLE
   - L_5_2_3_3 = "Breadth of Emerging Technology Relevant Experience"
     - Max 1 occurrences/project

@@ -24,9 +24,8 @@ date: "1/31/2021"
 #### VOL 1 GENERAL
 TBD
 
-#### L_5_2 = VOL 2 RELEVANT EXPERIENCES
-
-##### L_5_2_2 = "Primary Relevant Experience" 
+#### VOL 2 RELEVANT EXPERIENCES (L_5_2)
+- L_5_2_2 = "Primary Relevant Experience" 
 -  ≤ 7 ∃! Project 
 - Where each Project =
   - ≥ 1 NAICS = 518210 | 541511 | 541512 | 541513 | 541519
@@ -51,16 +50,16 @@ TBD
     - Max 3 occurrences/project
   - L_5_2_2_10 = Breadth of Relevant Experience Performance Areas
     - Max 1 occurrences/project
-- BONUS/EXTRA TBD
 
-##### L_5_2_3 = "Emerging Technology Relevant Experience"
+
+- L_5_2_3 = "Emerging Technology Relevant Experience"
 - ≥ 150 K USD per project
 - ≥ 1 INNOVATIVE SOLUTIONS (SEE "polaris_c_algorithm.txt")
 - See M.6 SCORING TABLE
   - L_5_2_3_3 = "Breadth of Emerging Technology Relevant Experience"
     - Max 1 occurrences/project
 
-#### L_5_3  = VOL 3 PAST PERFORMANCE
+#### VOL 3 PAST PERFORMANCE (L_5_3)
 - VOL 3 ⊆ VOL 2
 - IF (primary source == CPARS in X) then CPARS, ELSE (primary source == 'other' in X) then PP_SURVEY
   - *X = CPARS.GOV data matched to (AWARD ID|CONTRACT ID) & DUNS*
@@ -68,7 +67,7 @@ TBD
   - L_5_3_1 - _3 = Past Performance
     - Max 1 occurrences/project
 
-#### L_5_4 = VOL 4 SYS, CERT, CLEAR
+#### VOL 4 SYS, CERT, CLEAR (L_5_4)
 - Cost Accounting Systems = ("COST"&"ACCOUNT")|SYS"
 - Facility Clearance = "FACILIT"&"CLEARANC"|"FLC"
 - Purchasing Systems = "PURCHAS"&"SYS"
@@ -82,7 +81,7 @@ TBD
   - L_5_4_7 = Government Facility Clearances
     - Max 1 occurrences/Project
     
-#### L_5_5 = VOL 5 RISK ASSESSMENT
+#### VOL 5 RISK ASSESSMENT (L_5_5)
 - VOL 5 ⊆ VOL 3
 - CREDIT TBD
 - See M.6 SCORING TABLE

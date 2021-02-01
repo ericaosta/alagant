@@ -11,7 +11,7 @@ date: "1/31/2021"
 
 # Approach
 
-## Part 1: Filter companies with projects that meet Section L (VOL 1 - VOL 5)
+## Part 1: Filter companies with projects that meet the criteria under Section L (VOL 1 - VOL 5)
 
 ### Data Required
 - AWARDS DATA USASPENDING.GOV FY08-21

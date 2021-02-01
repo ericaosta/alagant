@@ -3,9 +3,9 @@ title: "polaris_approach"
 author: "Erica"
 date: "1/31/2021"
 ---
-
 # Goal: 
 ## Determine which company or combination of companies lead to the sum-total of X points to meet the threshold score for Polaris GWAC. 
+- [Polaris GWAC Draft Request for Proposals from beta.SAM.gov](https://beta.sam.gov/opp/257509b8cfe14d48beb4f71033995e0b/view?keywords=polaris&sort=-relevance&index=opp&is_active=true&page=1)
 
 > Note: Criteria for selection (see Section L) have been defined. Weights (see "Number of Potential Occurences" in M.6 Scoring Table) have been defined However, the Scoring Values have yet to be released. Will move forward with calculating points as soon as they are released. 
 

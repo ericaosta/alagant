@@ -12,14 +12,14 @@ date: "2/03/2021"
 
 # Initial search for potential TEAM LEADERS
 ## Data Required
-- List of companies from (SAM.gov)[https://www.sam.gov/SAM/pages/public/searchRecords/advancedEMRSearch.jsf] that meet the following:
+- List of companies from [SAM.gov](https://www.sam.gov/SAM/pages/public/searchRecords/advancedEMRSearch.jsf) that meet the following:
   - Small Business
   - NAICS code: 541512
   - United States
 - List of companies with CMMI ML2 and up
-  - I can reference my original list from Factor 1 (SAM_CMMI.xlsx)[https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx] and include CMMI ML2 and up
+  - I can reference my original list from Factor 1 [SAM_CMMI.xlsx](https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx) and include CMMI ML2 and up
   - I can begin my search agnostic of CMMI status and, after narrowing down based on Small Business, NAICS, Clearances, etc., I can manually check for CMMI and ISO
-- List of awards from (USAspending.gov)[https://www.usaspending.gov]; search under "Award Description"
+- List of awards from [USAspending.gov](https://www.usaspending.gov); search under "Award Description"
   - Facility Security Clearance ("TOP SECRET", "SECURITY CLEARANCE", etc.)
   - Cost Accounting System
   - Approved Purchasing System

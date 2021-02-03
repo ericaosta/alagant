@@ -26,17 +26,17 @@ date: "2/03/2021"
 - Others? Esp. to find FCL. To instance, [state.gov](https://www.state.gov/facility-security-clearances-faq/) states that FCL can be in the form of a formal contract, Request for Proposal (RFP), purchase order, an IDIQ. There is some more info on this discussion on [business.defense.gov](https://business.defense.gov/Portals/57/Documents/SmallBusinessWebinar%20QandA.pdf?ver=2020-07-15-161110-867) but do not know how to interpret this information yet. 
 
 ## Criteria
-- A. Must be
+- **A**. Must be
   - Small Business (SB), 
   - Woman-Owned Small Business (WOSB), and/or 
-  - Historically Underutilized Business Zones (HUBZone)¬
-- B. L_5_2; Volume 2 (Relevant Experience, NAICS only)
+  - Historically Underutilized Business Zones (HUBZone)
+- **B**. L_5_2; Volume 2 (Relevant Experience, NAICS only)
   - **541512**
   - 518210
   - 541511
   - 541513
   541519
-- C. L_5_4; Volume 4 (Systems, Certifications, Clearances)
+- **C**. L_5_4; Volume 4 (Systems, Certifications, Clearances)
   - CMMI ≥ ML2
   - ISO 9001:2015|20000:2018|27001:2018
   - Cost Accounting System
@@ -44,9 +44,9 @@ date: "2/03/2021"
   - Government Facility Clearance (Secret vs. Top Secret)
 
 ## Order of Operations
-- Step 1. List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov
-- Step 2. Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by PARENT DUNS
-- Step 3. Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
+- **Step 1.** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov
+- **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by PARENT DUNS
+- **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
 AND/OR
-- Step 4. If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
+- **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 

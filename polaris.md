@@ -19,7 +19,7 @@ date: "2/03/2021"
 - List of companies with CMMI ML2 and up
   - I can reference my original list from Factor 1 [SAM_CMMI.xlsx](https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx) and include CMMI ML2 and up
   - I can begin my search agnostic of CMMI status and, after narrowing down based on Small Business, NAICS, Clearances, etc., I can manually check for CMMI and ISO
-- List of awards from [USAspending.gov](https://www.usaspending.gov); search under "Award Description"
+- List of awards from [USAspending.gov](https://www.usaspending.gov); search under AWARD DESCRIPTION
   - Facility Security Clearance ("TOP SECRET", "SECURITY CLEARANCE", etc.)
   - Cost Accounting System
   - Approved Purchasing System
@@ -47,6 +47,10 @@ date: "2/03/2021"
 - **Step 1.** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov
 - **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by PARENT DUNS
 - **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
+
+
 AND/OR
+
+
 - **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 

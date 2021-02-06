@@ -18,8 +18,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - United States
 - List of companies with CMMI ML2 and up
   - I can reference my original list from Factor 1 [SAM_CMMI.xlsx](https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx) and include CMMI ML2 and up
-  - I can begin my search independen\
-  of CMMI status and, after narrowing down based on Small Business, NAICS, Clearances, etc., I can manually check for CMMI and ISO
+  - I can begin my search independen of CMMI status and, after narrowing down based on Small Business, NAICS, Clearances, etc., I can manually check for CMMI and ISO
 - List of awards from [USAspending.gov](https://www.usaspending.gov); search under AWARD DESCRIPTION
   - Facility Security Clearance ("TOP SECRET", "SECURITY CLEARANCE", etc.)
   - Cost Accounting System

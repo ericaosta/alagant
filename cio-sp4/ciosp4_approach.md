@@ -7,7 +7,7 @@ date: "2/06/2021"
 
 # Goal
 
-# A. Team Lead Search
+# Team Lead Search
 ## 1. Objective
 Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clearances, and other yes-or-no objective measures.
 

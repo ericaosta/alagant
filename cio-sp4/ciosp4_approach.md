@@ -7,7 +7,7 @@ date: "2/06/2021"
 
 # Goal
 
-# A. Team Lead Role Search
+# A. Team Lead Search
 ## 1. Objective
 Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clearances, and other yes-or-no objective measures.
 
@@ -59,4 +59,4 @@ AND/OR
 
 - **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 
-# B. CTA Member Role Search
+# B. CTA Member Search

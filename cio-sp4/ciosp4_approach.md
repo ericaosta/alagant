@@ -49,9 +49,9 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - List of DC zipcode(s) as reference point(s)
 
 ## Order of Operations
-- 1. List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov. This list will be called "SAM Small Business".
-- 2. Match SAM Small Business to with Awards from USAspending.gov FY08-21 by *PARENT* DUNS. This matched list will be called "Matched SAM-Award".
-- 3. Select the following columns from Matched SAM-Award:
+- **1** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov. This list will be called "SAM Small Business".
+- **2** Match SAM Small Business to with Awards from USAspending.gov FY08-21 by *PARENT* DUNS. This matched list will be called "Matched SAM-Award".
+- **3** Select the following columns from Matched SAM-Award:
   - contract_award_unique_key 
   - award_id_piid 
   - parent_award_agency_id
@@ -62,24 +62,23 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - action_date_fiscal_year
   - period_of_performance_start_date
   - period_of_performance_current_end_date
-  - cage_code
-  - recipient_parent_duns
-  - recipient_parent_name
+  - **cage_code**
+  - **recipient_parent_duns**
+  - **recipient_parent_name**
   - recipient_country_name
   - recipient_address_line_1
   - recipient_address_line_2
   - recipient_city_name
   - recipient_state_name
-  - recipient_zip_4_code
+  - **recipient_zip_4_code**
   - recipient_phone_number
-  - naics_code
+  - **naics_code**
   - naics_description
-  - service_disabled_veteran_owned_business
-  - women_owned_small_business
-  - c8a_program_participant
-  - historically_underutilized_business_zone_hubzone_firm 
-  - sba_certified_8a_joint_venture
-
+  - **service_disabled_veteran_owned_business**
+  - **women_owned_small_business**
+  - **c8a_program_participant**
+  - **historically_underutilized_business_zone_hubzone_firm** 
+  - **sba_certified_8a_joint_venture**
 
 - **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by *PARENT* DUNS
 - **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION

@@ -49,9 +49,10 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - List of DC zipcode(s) as reference point(s)
 
 ## Order of Operations
-- **1** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov. This list will be called "SAM Small Business".
-- **2** Match SAM Small Business to with Awards from USAspending.gov FY08-21 by *PARENT* DUNS. This matched list will be called "Matched SAM-Award".
-- **3** Select the following columns from Matched SAM-Award:
+- **1** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov. This list will be called "SAM_SMALL_BUSINESS_541512".
+- **2** Match SAM_SMALL_BUSINESS to with Awards from USAspending.gov FY08-21. The resulting matched list will be called "MATCHED_SAM_AWARD_541512".
+  - Match by recipient_parent_duns
+- **3** Select the following columns from MATCHED_SAM_AWARD_541512:
   - contract_award_unique_key 
   - award_id_piid 
   - parent_award_agency_id
@@ -79,8 +80,13 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - **c8a_program_participant**
   - **historically_underutilized_business_zone_hubzone_firm** 
   - **sba_certified_8a_joint_venture**
+- **4** Match MATCHED_SAM_AWARD_541512 to CMMI_SAM, a list of US companies registered with SAM and their corresponding CMMI-SVC or -DEV maturity level (ML)." The resulting list will be called "CMMI_SAM_AWARD_541512."
+  - Match by recipient_parent_duns
+- **5** 
 
-- **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by *PARENT* DUNS
+
+
+
 - **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
 
 

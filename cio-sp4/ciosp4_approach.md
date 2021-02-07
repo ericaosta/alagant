@@ -82,17 +82,11 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - **sba_certified_8a_joint_venture**
 - **4**. Match MATCHED_SAM_AWARD_541512 to CMMI_SAM, a list of US companies registered with SAM and their corresponding CMMI-SVC or -DEV maturity level (ML)." The resulting list will be called "CMMI_SAM_AWARD_541512."
   - Match by recipient_parent_duns
-- **5**. 
+- **5**. From CMMI_SAM_AWARD_541512, filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System)
+  - Search keywords under award_description
 
-
-
-
-- **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
-
-
-AND/OR
 
 
 - **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 
-# B. CTA Member Search
+# CTA Member Search

@@ -90,3 +90,8 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
 - **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 
 # CTA Member Search
+- Company B (multiple): Relevant experience-related score elements
+- Company combinations that meet Relevant Experience 
+- How to narrow? On Past Performance, look for contracts with >2 M USD
+- Maximize points, but may have multiple ones that may not have all highest numbers (multiple companies in list, sort in descending order)
+

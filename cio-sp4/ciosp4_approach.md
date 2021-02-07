@@ -16,8 +16,8 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Small Business
   - NAICS code: 541512
   - United States
-- List of companies with CMMI ML2 and up
-  - I can reference my original list from Factor 1 [SAM_CMMI.xlsx](https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx) and include CMMI ML2 and up
+- List of companies with CMMI ML3 and up
+  - I can reference my original list from Factor 1 [SAM_CMMI.xlsx](https://github.com/ericaosta/alagant/blob/main/F1/SAM_CMMI.xlsx) and include CMMI ML3 and up
   - I can begin my search independen of CMMI status and, after narrowing down based on Small Business, NAICS, Clearances, etc., I can manually check for CMMI and ISO
 - List of awards from [USAspending.gov](https://www.usaspending.gov); search under AWARD DESCRIPTION
   - Facility Security Clearance ("TOP SECRET", "SECURITY CLEARANCE", etc.)
@@ -46,10 +46,11 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Approved Purchasing System (Yes/No/Maybe)
   - Facility Clearance Level (Secret/Top Secret)
 - **D**. In last 3 years, was the place of performance for an individual project father than 200 miles from DC?
+  - List of DC zipcode(s) as reference point(s_
 
 ## Order of Operations
 - **Step 1.** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov
-- **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by PARENT DUNS
+- **Step 2.** Match previous filtered list (Step 1) with awards data from USAspending.gov FY08-21 by *PARENT* DUNS
 - **Step 3.** Filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System (**TBD**) under AWARD DESCRIPTION
 
 

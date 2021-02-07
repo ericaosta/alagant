@@ -24,7 +24,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Cost Accounting System
   - Approved Purchasing System
 - Other data to be scraped from web search, company websites, etc., by Andrew as needed
-- Others? Esp. to find FCL. To instance, [state.gov](https://www.state.gov/facility-security-clearances-faq/) states that FCL can be in the form of a formal contract, Request for Proposal (RFP), purchase order, an IDIQ. There is some more info on this discussion on [business.defense.gov](https://business.defense.gov/Portals/57/Documents/SmallBusinessWebinar%20QandA.pdf?ver=2020-07-15-161110-867) but do not know how to appropriately and thoroughly proceed on this item yet.
+- Others? Esp. to find FCL. For instance, [state.gov](https://www.state.gov/facility-security-clearances-faq/) states that FCL can be in the form of a formal contract, Request for Proposal (RFP), purchase order, an IDIQ. There is some more info on this discussion on [business.defense.gov](https://business.defense.gov/Portals/57/Documents/SmallBusinessWebinar%20QandA.pdf?ver=2020-07-15-161110-867) but do not know how to appropriately and thoroughly proceed on this item yet.
 
 ## 3. Inclusion Criteria * NEED TO CHANGE*
 - **A**. Must be a part of one or more of the following small business socioeconomic categories:

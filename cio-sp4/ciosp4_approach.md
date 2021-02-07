@@ -7,7 +7,7 @@ date: "2/06/2021"
 
 # Goal
 
-# A. Team Lead Search
+# A. Team Lead Role Search
 ## 1. Objective
 Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clearances, and other yes-or-no objective measures.
 
@@ -46,7 +46,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Approved Purchasing System (Yes/No/Maybe)
   - Facility Clearance Level (Secret/Top Secret)
 - **D**. In last 3 years, was the place of performance for an individual project father than 200 miles from DC?
-  - List of DC zipcode(s) as reference point(s_
+  - List of DC zipcode(s) as reference point(s)
 
 ## Order of Operations
 - **Step 1.** List of all companies that are Small Businesses in the USA by NAICS 541512 from SAM.gov
@@ -59,3 +59,4 @@ AND/OR
 
 - **Step 4.** If list is reasonably short, manually search for CMMI ML2 and up and ISO 9001:2015, 20000:2018, and/or 27001:2018
 
+# B. CTA Member Role Search

@@ -7,4 +7,4 @@ Erica Osta, Data Scientist
 - **Polaris**
   - [Approach to Polaris](https://github.com/ericaosta/alagant/blob/main/polaris.md)
 - **CIO-SP4**
-  - [Approach to CIO SP4]()
+  - [Approach to CIO SP4](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md)

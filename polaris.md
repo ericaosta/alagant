@@ -3,12 +3,28 @@ title: "polaris_approach"
 author: "Erica"
 date: "2/03/2021"
 ---
-# Goal
-## Determine which company or combination of companies lead to the sum-total of X points to meet the threshold score for Polaris GWAC. 
+# Polaris
+## Goal
+Determine which company or combination of companies lead to the sum-total of X points to meet the threshold score for Polaris GWAC. 
 - [Polaris GWAC Draft Request for Proposals from beta.SAM.gov](https://beta.sam.gov/opp/257509b8cfe14d48beb4f71033995e0b/view?keywords=polaris&sort=-relevance&index=opp&is_active=true&page=1)
 
 > Note: Criteria for selection (see Section L) have been defined. Weights (see "Number of Potential Occurences" in M.6 Scoring Table) have been defined However, the Scoring Values have yet to be released. Will move forward with calculating points as soon as they are released. 
 
+# Nagivation
+- [Team Lead Search](https://github.com/ericaosta/alagant/blob/main/polaris.md#team-lead-search)
+  - [Objective](https://github.com/ericaosta/alagant/blob/main/polaris.md#1-objective)
+  - [Input Data](https://github.com/ericaosta/alagant/blob/main/polaris.md#2-input-data)
+  - [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/polaris.md#3-inclusion-criteria)
+  - [Order of Operations](https://github.com/ericaosta/alagant/blob/main/polaris.md#4-order-of-operations)
+  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/polaris.md#5-algorithms-and-code)
+
+- [CTA Member Search](https://github.com/ericaosta/alagant/blob/main/polaris.md#contract-team-arrangements-cta-member-search)
+  - [Objective](https://github.com/ericaosta/alagant/blob/main/polaris.md#1-objective-1)
+  - [Input Data](https://github.com/ericaosta/alagant/blob/main/polaris.md#2-input-data-1)
+  - [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/polaris.md#3-inclusion-criteria-1)
+  - [Order of Operations](https://github.com/ericaosta/alagant/blob/main/polaris.md#4-order-of-operations-1)
+  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/polaris.md#5-algorithms-and-code-1)
+  
 # Team Lead Search
 ## 1. Objective
 Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clearances, and other yes-or-no objective measures.
@@ -88,7 +104,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
 - **6.** If list is reasonably short, manually verify CMMI status, and manually check ISO 9001:2015, 20000:2018, and/or 27001:2018
   - Search on company website
 
-## 5. Algorithms and Code
+##. Algorithms and Code
 
 # Contract Team Arrangements (CTA) Member Search
 ## 1. Objective
@@ -117,12 +133,12 @@ Search will be focused on Relevant Experience and Past Performance.
   - Approved Purchasing System (Yes/No/Maybe)
   - Facility Clearance Level (Secret/Top Secret)
 - **E**. Relevant Experience
-  - See details on algorithms for [Sectiosn L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)
+  - See details on algorithms for [Sections L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)
 - **F**. Past Experience
-  - See details on algorithms for [Sectiosn L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)
+  - See details on algorithms for [Sections L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)
 ## 4. Order of Operations
 - TBD
 
 ## 5. Algorithms and Code
-- [Section C](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_c_algorithm.txt)
-- [Sectiosn L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)
+- [Section C](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_c_algorithm.txt).
+- [Sections L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)

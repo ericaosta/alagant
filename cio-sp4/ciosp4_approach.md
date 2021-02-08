@@ -1,11 +1,9 @@
 ---
 title: "ciosp4_approach"
 author: "Erica"
-date: "2/06/2021"
+date: "2/08/2021"
 ---
 # CIO-SP4
-
-# Goal
 
 # Team Lead Search
 ## 1. Objective

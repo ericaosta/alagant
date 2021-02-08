@@ -94,6 +94,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
 Search will be focused on Relevant Experience and Past Performance.
 
 ## 2. Input Data
+- Same as *Team Lead Search* 
 
 ## 3. Inclusion Criteria
 - **A**. Must be a part of one or more of the following small business socioeconomic categories:

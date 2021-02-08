@@ -105,6 +105,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Search on company website
 
 ## 5. Algorithms and Code
+TBD
 
 # Contract Team Arrangements (CTA) Member Search
 ## 1. Objective
@@ -140,5 +141,5 @@ Search will be focused on Relevant Experience and Past Performance.
 - TBD
 
 ## 5. Algorithms and Code
-- [Section C](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_c_algorithm.txt).
+- [Section C](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_c_algorithm.txt)
 - [Sections L and M](https://github.com/ericaosta/alagant/blob/main/polaris/polaris_other.md)

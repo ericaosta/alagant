@@ -1,20 +1,11 @@
-----------
 # Complete Information for Section C, Section L and Section M
 
 ## L_5 Volumes
 
-### Data Required
-- AWARDS DATA USASPENDING.GOV FY08-21
-- CMMI
-- SAM DATA SAM.GOV
-- CPARS DATA CPARS.GOV (NOTE: MAY NOT BE PUBLIC)
-	
-### Interpretation & Algorithms
-
-#### VOL 1 GENERAL
+### VOL 1 GENERAL
 TBD
 
-#### VOL 2 RELEVANT EXPERIENCES (L_5_2)
+### VOL 2 RELEVANT EXPERIENCES (L_5_2)
 - L_5_2_2 = "Primary Relevant Experience" 
 -  ≤ 7 ∃! Project 
 - Where each Project =
@@ -49,7 +40,7 @@ TBD
   - L_5_2_3_3 = "Breadth of Emerging Technology Relevant Experience"
     - Max 1 occurrences/project
 
-#### VOL 3 PAST PERFORMANCE (L_5_3)
+### VOL 3 PAST PERFORMANCE (L_5_3)
 - VOL 3 ⊆ VOL 2
 - IF (primary source == CPARS in X) then CPARS, ELSE (primary source == 'other' in X) then PP_SURVEY
   - *X = CPARS.GOV data matched to (AWARD ID|CONTRACT ID) & DUNS*
@@ -57,7 +48,7 @@ TBD
   - L_5_3_1 - _3 = Past Performance
     - Max 1 occurrences/project
 
-#### VOL 4 SYS, CERT, CLEAR (L_5_4)
+### VOL 4 SYS, CERT, CLEAR (L_5_4)
 - Cost Accounting Systems = ("COST"&"ACCOUNT")|SYS"
 - Facility Clearance = "FACILIT"&"CLEARANC"|"FLC"
 - Purchasing Systems = "PURCHAS"&"SYS"
@@ -71,7 +62,7 @@ TBD
   - L_5_4_7 = Government Facility Clearances
     - Max 1 occurrences/Project
     
-#### VOL 5 RISK ASSESSMENT (L_5_5)
+### VOL 5 RISK ASSESSMENT (L_5_5)
 - VOL 5 ⊆ VOL 3
 - CREDIT TBD
 - See M.6 SCORING TABLE
@@ -80,20 +71,12 @@ TBD
   - L_5_5_2 Limitations on Subcontracting Compliance Risk
     - Max 1 occurrences/project
 	
-# P Determine Scores as in M.6 SCORING TABLE
+# Determine Scores as in M.6 SCORING TABLE
 
-### Data Required
-- AWARDS DATA USASPENDING.GOV FY08-21
-- CMMI DΑΤΑ
-- SAM DATA SAM.GOV
-- CPARS DATA CPARS.GOV (NOTE: MAY NOT BE PUBLIC)
-	
-### Interpretation & Algorithms
-
-#### Best Value	For Polaris, Highest Technically Rated Qualifying Offerors
+## Best Value For Polaris, Highest Technically Rated Qualifying Offerors
 - FAR 15.101 = 1 | >1 ∃! company (i.e., "source selection approach") combo 
 - IF ELSE looped through all possible combinations 
 - IF (company 1 ≥ "threshold score") THEN "HTRQO", ELSE (company 1 + company N + ... ≥ "threshold score") THEN "HTRQO"
 				
-#### Polaris = 3 MA/IDIQ contracts (POOLS) 
+## Polaris = 3 MA/IDIQ contracts (POOLS) 
 - 1 MA/IDIQ contract (POOL) ≥ 1 awards

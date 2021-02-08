@@ -99,7 +99,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Match by recipient_parent_duns
 - **5**. From CMMI_SAM_AWARD_541512, filter companies with keyword matches for FCL, Cost Accounting System, Approved Purchasing System)
   - Search keywords under award_description
-- **6.** If list is reasonably short, manually verify CMMI status, and manually check ISO 9001:2015, 20000:2018, and/or 27001:2018
+- **6.** If list is reasonably short, manually verify CMMI status, and manually check ISO 20000, ISO/IEC 27000/27001	
   - Search on company website
 
 ## 5. Algorithms and Code

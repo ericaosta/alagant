@@ -5,6 +5,21 @@ date: "2/08/2021"
 ---
 # CIO-SP4
 
+# Navigation
+[Team Lead Search](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#team-lead-search)
+- [Objective](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#1-objective)
+- [Input Data](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#2-input-data)
+- [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#3-inclusion-criteria)
+- [Order of Operations](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#4-order-of-operations)
+- [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5algorithms-and-code)
+
+[CTA Member Search](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#contract-team-arrangements-cta-member-search)
+- [Objective](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#1-objective-1)
+- [Input Data](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#2-input-data-1)
+- [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#3-inclusion-criteria-1)
+- [Order of Operations](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#4-order-of-operations-1)
+- [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5algorithms-and-code)
+
 # Team Lead Search
 ## 1. Objective
 Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clearances, and other yes-or-no objective measures.
@@ -86,9 +101,6 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
   - Search keywords under award_description
 - **6.** If list is reasonably short, manually verify CMMI status, and manually check ISO 9001:2015, 20000:2018, and/or 27001:2018
   - Search on company website
-  
-## 5. Algorithms and Code
-TBD
 
 # Contract Team Arrangements (CTA) Member Search
 ## 1. Objective
@@ -138,8 +150,5 @@ Search will be focused on Relevant Experience and Past Performance.
 
 ## 4. Order of Operations
 - TBD
-
-## 5.Algorithms and Code
-TBD
 
 Notes: * **is a GO/NO-GO requirement**

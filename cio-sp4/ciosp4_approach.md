@@ -18,7 +18,7 @@ date: "2/08/2021"
   - [Input Data](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#2-input-data-1)
   - [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#3-inclusion-criteria-1)
   - [Order of Operations](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#4-order-of-operations-1)
-  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5algorithms-and-code)
+  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5-algorithms-and-code)
 
 # Team Lead Search
 ## 1. Objective

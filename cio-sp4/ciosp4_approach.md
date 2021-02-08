@@ -11,14 +11,14 @@ date: "2/08/2021"
   - [Input Data](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#2-input-data)
   - [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#3-inclusion-criteria)
   - [Order of Operations](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#4-order-of-operations)
-  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5algorithms-and-code)
+  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5-algorithms-and-code)
 
 - [CTA Member Search](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#contract-team-arrangements-cta-member-search)
   - [Objective](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#1-objective-1)
   - [Input Data](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#2-input-data-1)
   - [Inclusion Criteria](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#3-inclusion-criteria-1)
   - [Order of Operations](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#4-order-of-operations-1)
-  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5-algorithms-and-code)
+  - [Algorithms and Code](https://github.com/ericaosta/alagant/blob/main/cio-sp4/ciosp4_approach.md#5-algorithms-and-code-1)
 
 # Team Lead Search
 ## 1. Objective

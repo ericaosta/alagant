@@ -104,7 +104,7 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
 - **6.** If list is reasonably short, manually verify CMMI status, and manually check ISO 9001:2015, 20000:2018, and/or 27001:2018
   - Search on company website
 
-##. Algorithms and Code
+## 5. Algorithms and Code
 
 # Contract Team Arrangements (CTA) Member Search
 ## 1. Objective

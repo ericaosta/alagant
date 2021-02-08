@@ -91,7 +91,6 @@ Search will be focused on certifications (e.g., ISO), CMMI maturity levels, clea
 
 # Contract Team Arrangements (CTA) Member Search
 ## 1. Objective
-## 1. Objective
 Search will be focused on Relevant Experience and Past Performance.
 
 ## 2. Input Data
@@ -138,4 +137,4 @@ Search will be focused on Relevant Experience and Past Performance.
 ## 4. Order of Operations
 - TBD
 
-* **is a GO/NO-GO requirement**
+Notes: * **is a GO/NO-GO requirement**
